@@ -15,11 +15,13 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "thin"
 gem "uglifier"
+gem 'haml'
 
 group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+  gem "erb2haml"
 end
 
 group :development, :test do

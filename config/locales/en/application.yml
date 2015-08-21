@@ -1,0 +1,5 @@
+en:
+  application:
+    flash_created: 'Product has been created'
+    error_created: 'Please review the problems below:'
+    new_product: 'New product'
