@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821084240) do
+ActiveRecord::Schema.define(version: 20150821130245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "costs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
@@ -37,9 +42,8 @@ ActiveRecord::Schema.define(version: 20150821084240) do
     t.text     "description"
     t.string   "manufacturer"
     t.string   "kind"
-    t.integer  "weight"
+    t.integer  "weight",                                 default: 100
     t.integer  "calories"
-    t.integer  "price"
     t.decimal  "fats",          precision: 12, scale: 6
     t.decimal  "proteins",      precision: 12, scale: 6
     t.decimal  "carbohydrates", precision: 12, scale: 6
@@ -77,8 +81,8 @@ ActiveRecord::Schema.define(version: 20150821084240) do
     t.decimal  "selenium",      precision: 12, scale: 6
     t.decimal  "chrome",        precision: 12, scale: 6
     t.decimal  "iodine",        precision: 12, scale: 6
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
   create_table "properties", force: :cascade do |t|
@@ -106,6 +110,15 @@ ActiveRecord::Schema.define(version: 20150821084240) do
   add_index "properties", ["last_updated"], name: "properties_last_updated_idx", using: :btree
   add_index "properties", ["scrape_id", "site_uid"], name: "properties_scrape_id_site_uid_idx", unique: true, using: :btree
   add_index "properties", ["scrape_id"], name: "properties_scrape_id_idx", using: :btree
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "cost_id"
+    t.integer  "weight"
+    t.integer  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "scrapes", force: :cascade do |t|
     t.string   "scrape",         limit: 50,               null: false

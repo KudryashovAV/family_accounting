@@ -5,9 +5,8 @@ class CreateProducts < ActiveRecord::Migration
       t.text    :description
       t.string  :manufacturer
       t.string  :kind
-      t.integer :weight
+      t.integer :weight, default: 100
       t.integer :calories
-      t.integer :price, precision: 12, scale: 2
       t.decimal :fats, precision: 12, scale: 6
       t.decimal :proteins, precision: 12, scale: 6
       t.decimal :carbohydrates, precision: 12, scale: 6

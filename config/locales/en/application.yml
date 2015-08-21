@@ -3,3 +3,4 @@ en:
     flash_created: 'Product has been created'
     error_created: 'Please review the problems below:'
     new_product: 'New product'
+    new_cost: 'New cost'

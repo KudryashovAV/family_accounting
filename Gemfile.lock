@@ -30,6 +30,9 @@ GEM
       activemodel (= 4.2.1)
       activesupport (= 4.2.1)
       arel (~> 6.0)
+    activerecord-devkit (1.1.0)
+      activerecord (>= 3.2.13)
+      ruby-features (>= 1.1.1)
     activesupport (4.2.1)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -72,6 +75,10 @@ GEM
       delayed_job (>= 3.0, < 4.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    dynamic-fields-for (1.1.0)
+      activerecord-devkit
+      jquery-rails
+      rails (>= 3.2.13)
     email_validator (1.6.0)
       activemodel
     erb2haml (0.1.5)
@@ -190,6 +197,7 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
+    ruby-features (1.1.2)
     ruby_parser (3.7.0)
       sexp_processor (~> 4.1)
     safe_yaml (1.0.4)
@@ -256,6 +264,7 @@ DEPENDENCIES
   byebug
   database_cleaner
   delayed_job_active_record
+  dynamic-fields-for
   email_validator
   erb2haml
   exception_notification

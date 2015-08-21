@@ -17,8 +17,8 @@ class ProductsController < ApplicationController
   private
 
   def resource_params
-    params.require(:product).permit(:name, :kind, :weight, :calories, :fats,
-                                    :proteins, :carbohydrates, :vitamin_a,
+    params.require(:product).permit(:name, :kind, :description, :calories, :fats,
+                                    :manufacturer, :proteins, :carbohydrates, :vitamin_a,
                                     :vitamin_b1, :vitamin_b2, :vitamin_b3,
                                     :vitamin_b4, :vitamin_b5, :vitamin_b6,
                                     :vitamin_b7, :vitamin_b9, :vitamin_b10,

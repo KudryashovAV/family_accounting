@@ -1,0 +1,10 @@
+= simple_form_for product, url: costs_path do |f|
+  = f.simple_fields_for :purchases, dynamic: true do |rf|
+    = rf.input :product_id, as: :select, collection: Product.all
+    = rf.input :weight
+    = rf.input :price
+    = rf.remove_fields_link 'Remove role'
+
+  = f.add_fields_link :purchases, 'Add role'
+
+  = f.submit

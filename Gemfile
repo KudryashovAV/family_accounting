@@ -16,6 +16,7 @@ gem "simple_form"
 gem "thin"
 gem "uglifier"
 gem 'haml'
+gem 'dynamic-fields-for'
 
 group :development do
   gem "spring"
