@@ -1,5 +1,21 @@
-- resource.purchases.each do |purchase|
-  .row
-    .col-md-2= purchase.weight
-    .col-md-2= purchase.price
-.row= link_to t('application.add_purchase'), edit_cost_path(id: resource)
+-if resource
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th= t('application.name')
+        %th= t('application.manufacturer')
+        %th= t('application.kind')
+        %th= t('application.weight')
+        %th= t('application.price')
+        %th= t('application.unit_price')
+    - resource.purchases.each do |purchase|
+      %tbody
+        %tr
+          %td= purchase.product.name
+          %td= purchase.product.manufacturer
+          %td= purchase.product.kind
+          %td= purchase.weight
+          %td= purchase.price
+          %td= purchase.unit_price
+    .row
+      .col-md-6= link_to t('application.add_purchase'), edit_cost_path(id: resource)

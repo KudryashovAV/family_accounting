@@ -1,10 +1,11 @@
 = simple_form_for product do |f|
   = f.simple_fields_for :purchases, dynamic: true do |rf|
-    = rf.input :product_id, as: :select, collection: Product.all
-    = rf.input :weight
-    = rf.input :price
-    = rf.remove_fields_link 'Remove role'
+    .row
+      .col-md-3= rf.input :product_id, as: :select, collection: Product.all
+      .col-md-3= rf.input :weight
+      .col-md-3= rf.input :price
+      .col-md-3.remove_attributes= rf.remove_fields_link t('application.remove_purchase'), class: "btn btn-default remove_attributes"
 
-  = f.add_fields_link :purchases, 'Add role'
+  = f.add_fields_link :purchases, t('application.add_purchase'), class: "btn btn-default"
 
-  = f.submit
+  = f.submit t('application.update'), class: "btn btn-default"

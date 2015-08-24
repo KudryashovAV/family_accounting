@@ -4,8 +4,14 @@
       .panel-heading{role: "tab", id: "cost_title_#{cost.id}" }
         %h4.panel-title
           %a{"aria-controls" => "cost_#{cost.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#cost_#{cost.id}"}
-            = cost.created_at.strftime("%A")
+            .row
+              .col-md-6= cost.created_at.strftime("%A")
+              .col-md-5
+              .col-md-1= t('application.total', cost: all_costs_from_day(cost.purchases))
       .panel-collapse.collapse.in{"aria-labelledby" => "cost_title_#{cost.id}", :role => "tabpanel", id: "cost_#{cost.id}" }
         .panel-body
           = render 'purchases_list', resource: cost
-= link_to t('application.new_cost'), new_cost_path if @costs.size < Cost::DAYS_OF_WEEK
+.row
+  %h4.col-md-6= link_to_if(@costs.size < Cost::DAYS_OF_WEEK, t('application.new_cost'), new_cost_path){}
+  .col-md-4
+  %h4.col-md-2= t('application.total_week', cost: all_costs_from_week(@costs))

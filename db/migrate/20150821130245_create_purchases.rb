@@ -6,6 +6,7 @@ class CreatePurchases < ActiveRecord::Migration
 
       t.integer :weight
       t.integer :price
+      t.decimal :unit_price, precision: 12, scale: 2
 
       t.timestamps null: false
     end

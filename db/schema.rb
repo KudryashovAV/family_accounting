@@ -116,8 +116,9 @@ ActiveRecord::Schema.define(version: 20150821130245) do
     t.integer  "cost_id"
     t.integer  "weight"
     t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.decimal  "unit_price", precision: 12, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "scrapes", force: :cascade do |t|
