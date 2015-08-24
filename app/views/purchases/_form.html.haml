@@ -1,0 +1,6 @@
+= simple_form_for product do |f|
+  .col-md-3= f.input :product_id, as: :select, collection: Product.all
+  .col-md-3= f.input :weight
+  .col-md-3= f.input :price
+  = f.input :cost_id, as: :hidden, input_html: {value: cost.id}
+  .col-md-3= f.submit t('application.add'), class: "btn btn-default add_purchase"

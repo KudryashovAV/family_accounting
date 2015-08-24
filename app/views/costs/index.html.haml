@@ -1,14 +1,14 @@
 - @costs.each do |cost|
-  #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+  #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
     .panel.panel-default
       .panel-heading{role: "tab", id: "cost_title_#{cost.id}" }
         %h4.panel-title
-          %a{"aria-controls" => "cost_#{cost.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#cost_#{cost.id}"}
+          %a{"aria-controls" => "cost_#{cost.id}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#cost_#{cost.id}"}
             .row
               .col-md-6= cost.created_at.strftime("%A")
               .col-md-5
               .col-md-1= t('application.total', cost: all_costs_from_day(cost.purchases))
-      .panel-collapse.collapse.in{"aria-labelledby" => "cost_title_#{cost.id}", :role => "tabpanel", id: "cost_#{cost.id}" }
+      .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{cost.id}", :role => "tabpanel", id: "cost_#{cost.id}" }
         .panel-body
           = render 'purchases_list', resource: cost
 .row

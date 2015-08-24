@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def all_costs_from_day(purchases)
-    purchases.any? ? purchases.map(&:price).reduce(&:+) : 0
+    purchases.any? ? purchases.map(&:price).compact.reduce(&:+) : 0
   end
 
   def all_costs_from_week(costs)
