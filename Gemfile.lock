@@ -102,6 +102,8 @@ GEM
       i18n
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    groupdate (2.4.0)
+      activesupport (>= 3)
     haml (4.0.6)
       tilt
     high_voltage (2.4.0)
@@ -271,6 +273,7 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   formulaic
+  groupdate
   haml
   high_voltage
   jasmine-rails

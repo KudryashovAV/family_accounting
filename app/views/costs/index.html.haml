@@ -1,0 +1,10 @@
+- @costs.each do |cost|
+  #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+    .panel.panel-default
+      .panel-heading{role: "tab", id: "cost_title_#{cost.id}" }
+        %h4.panel-title
+          %a{"aria-controls" => "cost_#{cost.id}", "aria-expanded" => "true", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#cost_#{cost.id}"}
+            = cost.created_at.strftime("%A")
+      .panel-collapse.collapse.in{"aria-labelledby" => "cost_title_#{cost.id}", :role => "tabpanel", id: "cost_#{cost.id}" }
+        .panel-body
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor b

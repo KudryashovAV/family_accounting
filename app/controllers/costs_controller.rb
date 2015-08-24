@@ -1,6 +1,6 @@
 class CostsController < ApplicationController
   def index
-    @costs = Costs.all
+    @costs = Cost.where('created_at >= ? AND created_at <= ?', params[:start_week], params[:end_week]).order('created_at ASC')
   end
 
   def new

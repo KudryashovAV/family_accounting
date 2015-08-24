@@ -17,6 +17,7 @@ gem "thin"
 gem "uglifier"
 gem 'haml'
 gem 'dynamic-fields-for'
+gem 'groupdate'
 
 group :development do
   gem "spring"
