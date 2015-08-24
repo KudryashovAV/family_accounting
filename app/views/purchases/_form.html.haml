@@ -1,4 +1,4 @@
-= simple_form_for product do |f|
+= simple_form_for product, remote: true do |f|
   .col-md-3= f.input :product_id, as: :select, collection: Product.all
   .col-md-3= f.input :weight
   .col-md-3= f.input :price
