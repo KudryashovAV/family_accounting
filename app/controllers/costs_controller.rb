@@ -9,12 +9,33 @@ class CostsController < ApplicationController
 
   def create
     @cost = Cost.new(resource_params)
-    if @cost.save
+    exist_costs = Cost.where('created_at > ? AND created_at < ?', Date.yesterday, Date.tomorrow).map(&:created_at).map{|x| x.strftime("%A")}
+    unless exist_costs.include?(Date.today.strftime("%A"))
+      if @cost.save
+        flash[:notice] = t('application.flash_created')
+        redirect_to costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
+      else
+        flash[:alert] = t('application.error_created')
+        render :new
+      end
+    else
+      flash[:notice] = t('application.exist_costs')
+      redirect_to costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
+    end
+  end
+
+  def edit
+    @cost = Cost.find(params[:id])
+  end
+
+  def update
+    @cost = Cost.find(params[:id])
+    if @cost.update(resource_params)
       flash[:notice] = t('application.flash_created')
-      redirect_to :root
+      redirect_to costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
     else
       flash[:alert] = t('application.error_created')
-      render :new
+      render :edit
     end
   end
 

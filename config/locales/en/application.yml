@@ -5,3 +5,5 @@ en:
     new_product: 'New product'
     new_cost: 'New cost'
     all_cost: 'All costs'
+    add_purchase: 'Add purchases'
+    exist_costs: 'You alredy create cost on today'

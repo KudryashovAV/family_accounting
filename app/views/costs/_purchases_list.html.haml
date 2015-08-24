@@ -1,0 +1,5 @@
+- resource.purchases.each do |purchase|
+  .row
+    .col-md-2= purchase.weight
+    .col-md-2= purchase.price
+.row= link_to t('application.add_purchase'), edit_cost_path(id: resource)

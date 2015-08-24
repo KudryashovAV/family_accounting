@@ -7,4 +7,5 @@
             = cost.created_at.strftime("%A")
       .panel-collapse.collapse.in{"aria-labelledby" => "cost_title_#{cost.id}", :role => "tabpanel", id: "cost_#{cost.id}" }
         .panel-body
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor b
+          = render 'purchases_list', resource: cost
+= link_to t('application.new_cost'), new_cost_path if @costs.size < Cost::DAYS_OF_WEEK

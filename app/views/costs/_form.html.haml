@@ -1,4 +1,4 @@
-= simple_form_for product, url: costs_path do |f|
+= simple_form_for product do |f|
   = f.simple_fields_for :purchases, dynamic: true do |rf|
     = rf.input :product_id, as: :select, collection: Product.all
     = rf.input :weight
