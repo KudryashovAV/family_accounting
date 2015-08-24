@@ -1,0 +1,2 @@
+- search_period.each do |(from, to)|
+      %td= link_to from.strftime('%b %d, %Y'), admins_properties_path(inspections_day: from, next_day: to)

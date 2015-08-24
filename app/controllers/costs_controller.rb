@@ -1,4 +1,8 @@
 class CostsController < ApplicationController
+  def index
+    @costs = Costs.all
+  end
+
   def new
     @cost = Cost.new
   end
