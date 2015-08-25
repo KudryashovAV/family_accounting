@@ -1,1 +1,1 @@
-= $('#cost_#{id}').html("#{j render 'costs/purchases_list'}");
+$("#cost_#{@purchase.cost_id}").html("#{j render 'costs/purchases_list', resource: @purchase.cost}");

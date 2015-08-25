@@ -6,11 +6,9 @@ class PurchasesController < ApplicationController
   def create
     @purchase = Purchase.new(resource_params)
     if @purchase.save
-      flash[:notice] = t('application.flash_created')
-      redirect_to :root
+      flash.now[:notice] = t('application.flash_created')
     else
-      flash[:alert] = t('application.error_created')
-      redirect_to :back
+      flash.now[:alert] = t('application.error_created')
     end
   end
 
