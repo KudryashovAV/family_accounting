@@ -1,6 +1,6 @@
 class CostsController < ApplicationController
   def index
-    @costs = Cost.where('created_at >= ? AND created_at <= ?', params[:start_week], params[:end_week]).order('created_at ASC')
+    @costs = Cost.load_costs_for_period(params[:period].to_sym, params[:start], params[:end])
   end
 
   def new
@@ -13,14 +13,14 @@ class CostsController < ApplicationController
     unless exist_costs.include?(Date.today.strftime("%A"))
       if @cost.save
         flash[:notice] = t('application.flash_created')
-        redirect_to costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
+        redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
       else
         flash[:alert] = t('application.error_created')
         render :new
       end
     else
       flash[:notice] = t('application.exist_costs')
-      redirect_to costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
+      redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
     end
   end
 
@@ -32,7 +32,7 @@ class CostsController < ApplicationController
     @cost = Cost.find(params[:id])
     if @cost.update(resource_params)
       flash[:notice] = t('application.flash_created')
-      redirect_to costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
+      redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
     else
       flash[:alert] = t('application.error_created')
       render :edit

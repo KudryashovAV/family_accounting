@@ -18,6 +18,6 @@
           %td= purchase.price
           %td= purchase.unit_price
     .row
-      .col-md-6= link_to t('application.add_purchase'), edit_cost_path(id: resource)
+      .col-md-12= resource.created_at.strftime('%A, %d %b %Y')
     .row
       .col-md-12= render 'purchases/form', product: resource.purchases.build, cost: resource

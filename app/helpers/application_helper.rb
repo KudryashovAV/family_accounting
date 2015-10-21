@@ -4,10 +4,16 @@ module ApplicationHelper
   end
 
   def all_costs_from_day(purchases)
-    purchases.any? ? purchases.map(&:price).compact.reduce(&:+) : 0
+    all_purchases = purchases.flatten
+    all_purchases.any? ? all_purchases.map(&:price).compact.reduce(&:+) : 0
   end
 
-  def all_costs_from_week(costs)
-    all_costs_from_day(costs.map(&:purchases).flatten)
+  def all_costs_from_period(costs)
+    square = 0
+    costs.each_value do |value|
+      all_costs_from_day(value.map(&:purchases).flatten)
+      square = square + all_costs_from_day(value.map(&:purchases).flatten)
+    end
+    square
   end
 end

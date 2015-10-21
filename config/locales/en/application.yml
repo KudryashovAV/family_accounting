@@ -4,7 +4,11 @@ en:
     error_created: 'Please review the problems below:'
     new_product: 'New product'
     new_cost: 'New cost'
+    costs: 'Costs'
     all_cost: 'All costs'
+    weekly_cost: 'Weekly costs'
+    monthly_cost: 'Monthly costs'
+    yearly_cost: 'Yearly costs'
     add_purchase: 'Add purchases'
     exist_costs: 'You alredy create cost on today'
     name: 'Name'
@@ -14,7 +18,7 @@ en:
     price: 'Price'
     unit_price: 'Unit price'
     total: "Total: %{cost}"
-    total_week: "Total by week: %{cost}"
+    total_by_period: "Total by period: %{cost}"
     remove_purchase: "X"
     add_purchase: "Add purchase"
     update: "Update"

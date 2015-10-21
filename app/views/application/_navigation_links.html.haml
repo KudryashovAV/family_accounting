@@ -1,2 +1,5 @@
 %li= link_to t('application.new_product'), new_product_path
-%li= link_to t('application.all_cost'), costs_path(start_week: Date.today.beginning_of_week, end_week: Date.today.end_of_week)
+%li= link_to t('application.weekly_cost'), costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
+%li= link_to t('application.monthly_cost'), costs_path(period: :month, start: Date.today.beginning_of_month, end: Date.today.end_of_month)
+%li= link_to t('application.yearly_cost'), costs_path(period: :year, start: Date.today.beginning_of_year, end: Date.today.end_of_year)
+%li= link_to t('application.all_cost'), costs_path(period: :all)
