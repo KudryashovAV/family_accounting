@@ -28,6 +28,6 @@ class ProductsController < ApplicationController
                                     :vitamin_p, :vitamin_u, :calcium, :iron,
                                     :potassium, :copper, :manganese, :magnesium,
                                     :sodium, :sulfur, :silicon, :zinc, :selenium,
-                                    :chrome, :iodine,)
+                                    :chrome, :iodine)
   end
 end
