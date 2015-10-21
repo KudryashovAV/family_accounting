@@ -1,6 +1,8 @@
 en:
   application:
+    confirm: 'Are you shure?'
     flash_created: "The operation was successful"
+    purchase_destroyed: "Purchase has been destroyed"
     error_created: "Please review the problems below:"
     new_product: "New product"
     new_cost: "New cost"

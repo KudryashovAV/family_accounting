@@ -8,6 +8,7 @@
         %th= t('application.weight')
         %th= t('application.price')
         %th= t('application.unit_price')
+        %th
     - resource.purchases.each do |purchase|
       %tbody
         %tr
@@ -17,7 +18,8 @@
           %td= purchase.weight
           %td= purchase.price
           %td= purchase.unit_price
+          %td= link_to 'X', purchase_path(id: purchase.id), method: 'delete', data: {confirm: t('application.confirm')}, remote: true
     .row
       .col-md-12= resource.created_at.strftime('%A, %d %b %Y')
     .row
-      .col-md-12= render 'purchases/form', product: resource.purchases.build, cost: resource
+      .col-md-12= render 'purchases/form', product: resource.purchases.build, cost_id: resource.id
