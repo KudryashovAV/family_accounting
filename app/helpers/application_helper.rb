@@ -11,8 +11,8 @@ module ApplicationHelper
   def all_costs_from_period(costs)
     square = 0
     costs.each_value do |value|
-      all_costs_from_day(value.map(&:purchases).flatten)
-      square = square + all_costs_from_day(value.map(&:purchases).flatten)
+      all_square = all_costs_from_day(value.map(&:purchases).flatten)
+      square = square + all_square if all_square
     end
     square
   end

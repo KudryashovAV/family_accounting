@@ -8,19 +8,13 @@ class CostsController < ApplicationController
   end
 
   def create
-    @cost = Cost.new(resource_params)
-    exist_costs = Cost.where('created_at > ? AND created_at < ?', Date.yesterday, Date.tomorrow).map(&:created_at).map{|x| x.strftime("%A")}
-    unless exist_costs.include?(Date.today.strftime("%A"))
-      if @cost.save
-        flash[:notice] = t('application.flash_created')
-        redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
-      else
-        flash[:alert] = t('application.error_created')
-        render :new
-      end
+    if params[:cost]
+      @cost = Cost.new(resource_params)
+      exist_costs = Cost.where('created_at > ?', Date.today).first
+      exist_costs ? save_or_update_cost(exist_costs.update(resource_params), :new) : save_or_update_cost(@cost.save, :new)
     else
-      flash[:notice] = t('application.exist_costs')
-      redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
+      flash[:alert] = t('application.empty_cost')
+      redirect_to new_cost_path
     end
   end
 
@@ -30,18 +24,22 @@ class CostsController < ApplicationController
 
   def update
     @cost = Cost.find(params[:id])
-    if @cost.update(resource_params)
-      flash[:notice] = t('application.flash_created')
-      redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
-    else
-      flash[:alert] = t('application.error_created')
-      render :edit
-    end
+    save_or_update_cost(@cost.update(resource_params), :edit)
   end
 
   private
 
   def resource_params
     params.require(:cost).permit(purchases_attributes: [:id, :weight, :price, :product_id, :_destroy])
+  end
+
+  def save_or_update_cost(condition, render_to_action)
+    if condition
+      flash[:notice] = t('application.flash_created')
+      redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
+    else
+      flash[:alert] = t('application.error_created')
+      render :new
+    end
   end
 end
