@@ -1,8 +1,20 @@
-- @costs.each_pair do |period, costs|
-  - costs.each do |cost|
-    .panel.panel-default{id: dom_id(cost)}
-      = render 'purchases_list', resource: cost, period: period, costs: costs
 .row
   .col-md-6
   .col-md-3
   %h4.col-md-3#total_by_period= t('application.total_by_period', cost: all_costs_from_period(@costs))
+- @costs.each_pair do |period, costs|
+  .row
+    .col-md-12
+      #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
+        .panel.panel-default
+          .panel-heading{role: "tab", id: "cost_title_#{period.gsub(/\s/, '')}" }
+            %h4.panel-title
+              %a{"aria-controls" => "coolapse_cost_#{period.gsub(/\s/, '')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_cost_#{period.gsub(/\s/, '')}"}
+                .row
+                  .col-md-6= period
+                  .col-md-4
+                  .col-md-2= t('application.total', cost:  all_costs_from_day(costs.map{|cost| cost.purchases}))
+          .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_cost_#{period.gsub(/\s/, '')}" }
+            - costs.each do |cost|
+              .panel.panel-default{id: dom_id(cost)}
+                = render 'purchases_list', resource: cost, period: period, costs: costs

@@ -1,20 +1,6 @@
 -if resource
   .row
-    %h4.col-md-12= resource.created_at.strftime('%A, %d %b %Y')
-  .row
-    .col-md-12
-      #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
-        .panel.panel-default
-          .panel-heading{role: "tab", id: "cost_title_#{period.gsub(/\s/, '')}" }
-            %h4.panel-title
-              %a{"aria-controls" => "coolapse_cost_#{period.gsub(/\s/, '')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_cost_#{period.gsub(/\s/, '')}"}
-                .row
-                  .col-md-6= t('application.add_purchase')
-                  .col-md-4
-                  .col-md-2= t('application.total', cost: all_costs_from_day(resource.purchases))
-          .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_cost_#{period.gsub(/\s/, '')}" }
-            .row
-              .col-md-12= render 'purchases/form', product: resource.purchases.build, cost_id: resource.id
+    %h4.col-md-12= link_to resource.created_at.strftime('%A, %d %b %Y'), cost_path(id: resource.id)
   .row
     .col-md-12
       %table.table.table-condensed

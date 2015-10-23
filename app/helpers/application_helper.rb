@@ -16,4 +16,5 @@ module ApplicationHelper
     end
     square
   end
+
 end
