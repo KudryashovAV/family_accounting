@@ -1,25 +1,40 @@
 -if resource
-  %table.table.table-condensed
-    %thead
-      %tr
-        %th= t('application.name')
-        %th= t('application.manufacturer')
-        %th= t('application.kind')
-        %th= t('application.weight')
-        %th= t('application.price')
-        %th= t('application.unit_price')
-        %th
-    - resource.purchases.each do |purchase|
-      %tbody
-        %tr
-          %td= purchase.product.name
-          %td= purchase.product.manufacturer
-          %td= purchase.product.kind
-          %td= purchase.weight
-          %td= purchase.price
-          %td= purchase.unit_price
-          %td= link_to 'X', purchase_path(id: purchase.id), method: 'delete', data: {confirm: t('application.confirm')}, remote: true
-    .row
-      .col-md-12= resource.created_at.strftime('%A, %d %b %Y')
-    .row
-      .col-md-12= render 'purchases/form', product: resource.purchases.build, cost_id: resource.id
+  .row
+    %h4.col-md-12= resource.created_at.strftime('%A, %d %b %Y')
+  .row
+    .col-md-12
+      #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
+        .panel.panel-default
+          .panel-heading{role: "tab", id: "cost_title_#{period.gsub(/\s/, '')}" }
+            %h4.panel-title
+              %a{"aria-controls" => "coolapse_cost_#{period.gsub(/\s/, '')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_cost_#{period.gsub(/\s/, '')}"}
+                .row
+                  .col-md-6= t('application.add_purchase')
+                  .col-md-4
+                  .col-md-2= t('application.total', cost: all_costs_from_day(resource.purchases))
+          .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_cost_#{period.gsub(/\s/, '')}" }
+            .row
+              .col-md-12= render 'purchases/form', product: resource.purchases.build, cost_id: resource.id
+  .row
+    .col-md-12
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th= t('application.name')
+            %th= t('application.manufacturer')
+            %th= t('application.kind')
+            %th= t('application.weight')
+            %th= t('application.price')
+            %th= t('application.unit_price')
+            %th
+          - resource.purchases.each do |purchase|
+            - if purchase.persisted?
+              %tbody
+                %tr
+                  %td= purchase.product.name
+                  %td= purchase.product.manufacturer
+                  %td= purchase.product.kind
+                  %td= purchase.weight
+                  %td= purchase.price
+                  %td= purchase.unit_price
+                  %td= link_to 'X', purchase_path(id: purchase.id), method: 'delete', data: {confirm: t('application.confirm')}

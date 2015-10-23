@@ -3,6 +3,10 @@ class CostsController < ApplicationController
     @costs = Cost.load_costs_for_period(params[:period].to_sym, params[:start], params[:end])
   end
 
+  def show
+    
+  end
+
   def new
     @cost = Cost.new
   end

@@ -6,9 +6,10 @@ class PurchasesController < ApplicationController
   def create
     @purchase = Purchase.new(resource_params)
     if @purchase.save
-      flash.now[:notice] = t('application.flash_created')
+      flash[:notice] = t('application.flash_created')
+      redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
     else
-      flash.now[:alert] = t('application.error_created')
+      flash[:alert] = t('application.error_created')
       render partial: "form", locals: { product: Cost.find(resource_params[:cost_id]).purchases.build, cost_id: resource_params[:cost_id] }
     end
   end
@@ -16,7 +17,8 @@ class PurchasesController < ApplicationController
   def destroy
     @purchase = Purchase.find(params[:id])
     @purchase.destroy
-    flash.now[:notice] = t('applicationpurchase_destroyed')
+    flash[:notice] = t('application.purchase_destroyed')
+    redirect_to costs_path(period: :week, start: Date.today.beginning_of_week, end: Date.today.end_of_week)
   end
 
   private

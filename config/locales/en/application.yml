@@ -23,6 +23,5 @@ en:
     total: "Total: %{cost}"
     total_by_period: "Total by period: %{cost}"
     remove_purchase: "X"
-    add_purchase: "Add purchase"
     update: "Update"
     add: "Add"
