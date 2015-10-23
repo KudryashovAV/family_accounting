@@ -1,0 +1,5 @@
+= simple_form_for product do |f|
+  .col-md-3= f.input :price
+  .col-md-3.form-group= f.input :month, input_html: {class: 'input-group date datepicker'}
+  .col-md-3= f.input :description
+  .col-md-3= f.submit t('application.add'), class: "btn btn-default add_purchase"

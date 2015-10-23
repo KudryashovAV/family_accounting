@@ -18,7 +18,7 @@ class PurchasesController < ApplicationController
     purchase = Purchase.find(params[:id])
     cost = purchase.cost
     purchase.destroy
-    flash[:notice] = t('application.purchase_destroyed')
+    flash[:notice] = t('application.element_destroyed')
     redirect_to cost_path(id: cost.id)
   end
 
