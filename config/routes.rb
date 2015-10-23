@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :products
-  resources :costs
-  resources :purchases
+  resources :costs, only: %i(index show)
+  resources :purchases, only: %i(new create destroy)
 end
