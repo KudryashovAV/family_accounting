@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :costs, only: %i(index show)
   resources :purchases, only: %i(new create destroy)
   resources :incomes
+  resources :reports, only: %i(index)
 end

@@ -1,0 +1,11 @@
+= simple_form_for :report, url: reports_path, method: 'get' do |f|
+  .row
+    .col-md-3= f.input :start, as: :string, label: t('application.from'), input_html: {class: 'datepicker'}
+    .col-md-3= f.input :end, as: :string, label: t('application.to'), input_html: {class: 'datepicker'}
+    .col-md-3= f.button :submit
+
+- if @incomes
+  = render 'incomes/incomes_card', incomes_collection: @incomes, create: false
+- if @costs
+  - @costs.each do |cost|
+    = render 'costs/purchases_list', resource: cost, edit: false
