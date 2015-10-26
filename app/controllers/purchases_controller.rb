@@ -25,6 +25,6 @@ class PurchasesController < ApplicationController
   private
 
   def resource_params
-    params.require(:purchase).permit(:weight, :price, :product_id, :cost_id)
+    params.require(:purchase).permit(:weight, :price, :product_id, :cost_id, :unit_price)
   end
 end

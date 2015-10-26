@@ -1,7 +1,7 @@
 .row
   .col-md-6
   .col-md-3
-  %h4.col-md-3#total_by_period= t('application.total_by_period', cost: all_costs_from_period(@costs))
+  %h4.col-md-3#total_by_period= t('application.total_by_period', price: all_costs_from_period(@costs))
 - @costs.each_pair do |period, costs|
   .row
     .col-md-12
@@ -13,8 +13,8 @@
                 .row
                   .col-md-6= period
                   .col-md-4
-                  .col-md-2= t('application.total', cost:  all_costs_from_day(costs.map{|cost| cost.purchases}))
+                  .col-md-2= t('application.total', price:  all_operation_from_period(costs.map{|cost| cost.purchases}))
           .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_cost_#{period.gsub(/\s/, '')}" }
             - costs.each do |cost|
               .panel.panel-default{id: dom_id(cost)}
-                = render 'purchases_list', resource: cost, period: period, costs: costs
+                = render 'purchases_list', resource: cost, edit: false

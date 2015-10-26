@@ -5,5 +5,8 @@
 //= require bootstrap-datepicker
 
 $(function(){
-            $('.datepicker').datepicker();
+            $('.datepicker').datepicker({
+              format: "dd/mm/yyyy"
+
+              });
             });

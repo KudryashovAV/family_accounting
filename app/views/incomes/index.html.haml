@@ -1,18 +1,15 @@
-.row
-  .col-md-12= render 'form', product: Income.new
-- @incomes.each do |income|
+= render 'incomes_card', incomes_collection: @incomes_per_current_month, create: true
+- @incomes.each_pair do |period, incomes|
   .row
     .col-md-12
-      %table.table.table-condensed
-        %thead
-          %tr
-            %th= t('application.price')
-            %th= t('application.month')
-            %th= t('application.description')
-            %th
-        %tbody
-          %tr
-            %td= income.price
-            %td= income.month
-            %td= income.description
-            %td= link_to 'X', income_path(id: income.id), method: 'delete', data: {confirm: t('application.confirm')}
+      #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
+        .panel.panel-default
+          .panel-heading{role: "tab", id: "income_title_#{period.gsub(/\s/, '')}" }
+            %h4.panel-title
+              %a{"aria-controls" => "coolapse_income_#{period.gsub(/\s/, '')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_income_#{period.gsub(/\s/, '')}"}
+                .row
+                  .col-md-6= period
+                  .col-md-4
+                  .col-md-2= t('application.total', price: number_to_currency(all_operation_from_period(incomes), unit: '€'))
+          .panel-collapse.collapse{"aria-labelledby" => "income_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_income_#{period.gsub(/\s/, '')}" }
+            = render 'incomes_card', incomes_collection: incomes, create: false

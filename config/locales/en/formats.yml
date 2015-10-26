@@ -1,16 +1,17 @@
 en:
   date:
     formats:
-      default:
-        "%m/%d/%Y"
-      with_weekday:
-        "%a %m/%d/%y"
+      default: '%d-%b-%Y'
+      long: '%B %d, %Y'
+      short: '%b %d'
+      with_weekday: '%a %m/%d/%y'
+      long_without_year: '%d %B'
 
   time:
     formats:
       default:
-        "%a, %b %-d, %Y at %r"
+        '%a, %b %-d, %Y at %r'
       date:
-        "%b %-d, %Y"
+        '%b %-d, %Y'
       short:
-        "%B %d"
+        '%B %d'

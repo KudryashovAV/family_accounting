@@ -4,8 +4,8 @@ class CreatePurchases < ActiveRecord::Migration
       t.references :product
       t.references :cost
 
-      t.integer :weight
-      t.integer :price
+      t.decimal :weight, precision: 12, scale: 2
+      t.decimal :price, precision: 12, scale: 2
       t.decimal :unit_price, precision: 12, scale: 2
 
       t.timestamps null: false

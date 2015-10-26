@@ -38,11 +38,11 @@ ActiveRecord::Schema.define(version: 20151023132456) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "incomes", force: :cascade do |t|
-    t.decimal  "price",       precision: 12, scale: 2
-    t.string   "month"
+    t.decimal  "price",            precision: 12, scale: 2
+    t.date     "reporting_period"
     t.string   "description"
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -122,8 +122,8 @@ ActiveRecord::Schema.define(version: 20151023132456) do
   create_table "purchases", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cost_id"
-    t.integer  "weight"
-    t.integer  "price"
+    t.decimal  "weight",     precision: 12, scale: 2
+    t.decimal  "price",      precision: 12, scale: 2
     t.decimal  "unit_price", precision: 12, scale: 2
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false

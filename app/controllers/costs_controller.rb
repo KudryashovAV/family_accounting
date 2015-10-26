@@ -1,6 +1,6 @@
 class CostsController < ApplicationController
   def index
-    @costs = Cost.all.sort_by{|x| x.created_at}.group_by{|i| i.created_at.strftime('%B %Y')}
+    @costs = group_by_period(Cost.all, :created_at, '%B %Y')
   end
 
   def show

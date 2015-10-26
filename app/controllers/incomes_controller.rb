@@ -1,6 +1,7 @@
 class IncomesController < ApplicationController
   def index
-    @incomes = Income.all
+    @incomes_per_current_month = Income.incomes_per_current_month
+    @incomes = group_by_period(incomes_without_current_mont, :reporting_period, '%B %Y')
   end
 
   def new
@@ -28,6 +29,10 @@ class IncomesController < ApplicationController
   private
 
   def resource_params
-    params.require(:income).permit(:price, :description, :month)
+    params.require(:income).permit(:price, :description, :reporting_period)
+  end
+
+  def incomes_without_current_mont
+    Income.all - @incomes_per_current_month
   end
 end

@@ -4,11 +4,11 @@ class Purchase < ActiveRecord::Base
 
   validates :product, presence: true
   validates :cost, presence: true
-  validates :price, :weight, presence: true
+  validates :unit_price, :weight, presence: true
 
-  after_create :set_unit_price
+  before_save :set_price
 
-  def set_unit_price
-    update(unit_price: (price.to_f/weight.to_f).round(2))
+  def set_price
+    self.price = self.unit_price * self.weight
   end
 end

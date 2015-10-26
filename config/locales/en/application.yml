@@ -21,11 +21,19 @@ en:
     kind: "Kind"
     weight: "Weight(kg/items)"
     description: "Description"
-    month: "Month"
+    reporting_period: "Reporting period"
     price: "Price"
     unit_price: "Unit price"
-    total: "Total: %{cost}"
-    total_by_period: "Total by period: %{cost}"
+    total: "Total: %{price}"
+    total_by_period: "Total by period: %{price}"
     remove_purchase: "X"
     update: "Update"
     add: "Add"
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        separator: ","
+        delimiter: "."
+        precision: 2
+        unit: ''

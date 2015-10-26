@@ -1,6 +1,6 @@
 = simple_form_for product do |f|
   .col-md-3= f.input :product_id, as: :select, collection: Product.all
   .col-md-3= f.input :weight, label: t('application.weight')
-  .col-md-3= f.input :price
+  .col-md-3= f.input :unit_price
   = f.input :cost_id, as: :hidden, input_html: {value: params[:id] || params[:purchase][:cost_id]}
   .col-md-3= f.submit t('application.add'), class: "btn btn-default add_purchase"
