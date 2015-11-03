@@ -15,11 +15,13 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "thin"
 gem "uglifier"
-gem 'haml'
-gem 'dynamic-fields-for'
-gem 'faker'
-gem 'bootstrap-datepicker-rails', require: 'bootstrap-datepicker-rails', git: 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem "haml"
+gem "dynamic-fields-for"
+gem "faker"
+gem "bootstrap-datepicker-rails", require: 'bootstrap-datepicker-rails', git: 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 gem "factory_girl_rails"
+gem "coffee-rails"
+gem "underscore-rails"
 
 group :development do
   gem "spring"
@@ -35,10 +37,10 @@ group :development, :test do
   gem "pry-rails"
   gem "rspec-rails", "~> 3.1.0"
   gem "jasmine-rails"
-  gem 'capybara-email'
-  gem 'capybara'
-  gem 'capybara-webkit'
-  gem 'capybara-screenshot'
+  gem "capybara-email"
+  gem "capybara"
+  gem "capybara-webkit"
+  gem "capybara-screenshot"
 end
 
 group :test do

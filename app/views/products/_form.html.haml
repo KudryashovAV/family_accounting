@@ -1,44 +1,52 @@
 = simple_form_for product, url: products_path do |f|
-  = f.input :name
-  = f.input :kind
-  = f.input :manufacturer
-  = f.input :description
-  = f.input :calories
-  = f.input :fats
-  = f.input :proteins
-  = f.input :carbohydrates
-  = f.input :vitamin_a
-  = f.input :vitamin_b1
-  = f.input :vitamin_b2
-  = f.input :vitamin_b3
-  = f.input :vitamin_b4
-  = f.input :vitamin_b5
-  = f.input :vitamin_b6
-  = f.input :vitamin_b7
-  = f.input :vitamin_b9
-  = f.input :vitamin_b10
-  = f.input :vitamin_b11
-  = f.input :vitamin_b12
-  = f.input :vitamin_b13
-  = f.input :vitamin_b15
-  = f.input :vitamin_c
-  = f.input :vitamin_d
-  = f.input :vitamin_e
-  = f.input :vitamin_k
-  = f.input :vitamin_n
-  = f.input :vitamin_p
-  = f.input :vitamin_u
-  = f.input :calcium
-  = f.input :iron
-  = f.input :potassium
-  = f.input :copper
-  = f.input :manganese
-  = f.input :magnesium
-  = f.input :sodium
-  = f.input :sulfur
-  = f.input :silicon
-  = f.input :zinc
-  = f.input :selenium
-  = f.input :chrome
-  = f.input :iodine
+  .row
+    .col-md-4
+      = f.input :name, placeholder: t('application.name'), label: false
+    .col-md-4
+      = f.input :kind, as: :select, input_html: {data: {show_on_value: {foods_options: ['Food', 'Sweets']}}}, collection: products_kind, prompt: t('application.kind'), label: false
+    .col-md-4
+      = f.input :manufacturer, placeholder: t('application.manufacturer'), label: false
+  .row
+    .col-md-12
+      = f.input :description, placeholder: t('application.description'), label: false, placeholder: t('application.description'), label: false
+  .row.only_foods{ data: { show_on_value_id: 'foods_options' } }
+    .col-md-6.form-inline.form-group
+      = f.input :calories, placeholder: t('application.calories'), label: false
+      = f.input :fats, placeholder: t('application.fats'), label: false
+      = f.input :proteins, placeholder: t('application.proteins'), label: false
+      = f.input :carbohydrates, placeholder: t('application.carbohydrates'), label: false
+      = f.input :calcium, placeholder: t('application.calcium'), label: false
+      = f.input :chrome, placeholder: t('application.chrome'), label: false
+      = f.input :copper, placeholder: t('application.copper'), label: false
+      = f.input :iodine, placeholder: t('application.iodine'), label: false
+      = f.input :iron, placeholder: t('application.iron'), label: false
+      = f.input :manganese, placeholder: t('application.manganese'), label: false
+      = f.input :magnesium, placeholder: t('application.magnesium'), label: false
+      = f.input :potassium, placeholder: t('application.potassium'), label: false
+      = f.input :selenium, placeholder: t('application.selenium'), label: false
+      = f.input :silicon, placeholder: t('application.silicon'), label: false
+      = f.input :sodium, placeholder: t('application.sodium'), label: false
+      = f.input :sulfur, placeholder: t('application.sulfur'), label: false
+      = f.input :vitamin_a, placeholder: t('application.vitamin_a'), label: false
+      = f.input :vitamin_b1, placeholder: t('application.vitamin_b1'), label: false
+      = f.input :vitamin_b2, placeholder: t('application.vitamin_b2'), label: false
+      = f.input :vitamin_b3, placeholder: t('application.vitamin_b3'), label: false
+      = f.input :vitamin_b4, placeholder: t('application.vitamin_b4'), label: false
+      = f.input :vitamin_b5, placeholder: t('application.vitamin_b5'), label: false
+      = f.input :vitamin_b6, placeholder: t('application.vitamin_b6'), label: false
+      = f.input :vitamin_b7, placeholder: t('application.vitamin_b7'), label: false
+      = f.input :vitamin_b9, placeholder: t('application.vitamin_b9'), label: false
+      = f.input :vitamin_b10, placeholder: t('application.vitamin_b10'), label: false
+      = f.input :vitamin_b11, placeholder: t('application.vitamin_b11'), label: false
+      = f.input :vitamin_b12, placeholder: t('application.vitamin_b12'), label: false
+      = f.input :vitamin_b13, placeholder: t('application.vitamin_b13'), label: false
+      = f.input :vitamin_b15, placeholder: t('application.vitamin_b15'), label: false
+      = f.input :vitamin_c, placeholder: t('application.vitamin_c'), label: false
+      = f.input :vitamin_d, placeholder: t('application.vitamin_d'), label: false
+      = f.input :vitamin_e, placeholder: t('application.vitamin_e'), label: false
+      = f.input :vitamin_k, placeholder: t('application.vitamin_k'), label: false
+      = f.input :vitamin_n, placeholder: t('application.vitamin_n'), label: false
+      = f.input :vitamin_p, placeholder: t('application.vitamin_p'), label: false
+      = f.input :vitamin_u, placeholder: t('application.vitamin_u'), label: false
+      = f.input :zinc, placeholder: t('application.zinc'), label: false
   = f.submit

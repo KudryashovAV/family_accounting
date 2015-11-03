@@ -22,6 +22,7 @@ en:
     kind: "Kind"
     weight: "Weight(kg/items)"
     description: "Description"
+    additional_options: "Additional options"
     reporting_period: "Reporting period"
     price: "Price"
     unit_price: "Unit price"
@@ -32,6 +33,44 @@ en:
     add: "Add"
     from: "From"
     to: "To"
+    calories: 'Calories'
+    fats: 'Fats'
+    proteins: 'Proteins'
+    carbohydrates: 'Carbohydrates'
+    vitamin_a: 'Vitamin A'
+    vitamin_b1: 'Vitamin B1'
+    vitamin_b2: 'Vitamin B2'
+    vitamin_b3: 'Vitamin B3'
+    vitamin_b4: 'Vitamin B4'
+    vitamin_b5: 'Vitamin B5'
+    vitamin_b6: 'Vitamin B6'
+    vitamin_b7: 'Vitamin B7'
+    vitamin_b9: 'Vitamin B9'
+    vitamin_b10: 'Vitamin B10'
+    vitamin_b11: 'Vitamin B11'
+    vitamin_b12: 'Vitamin B12'
+    vitamin_b13: 'Vitamin B13'
+    vitamin_b15: 'Vitamin B15'
+    vitamin_c: 'Vitamin C'
+    vitamin_d: 'Vitamin D'
+    vitamin_e: 'Vitamin E'
+    vitamin_k: 'Vitamin K'
+    vitamin_n: 'Vitamin N'
+    vitamin_p: 'Vitamin P'
+    vitamin_u: 'Vitamin U'
+    calcium: 'Calcium'
+    iron: 'Iron'
+    potassium: 'Potassium'
+    copper: 'Copper'
+    manganese: 'Manganese'
+    magnesium: 'Magnesium'
+    sodium: 'Sodium'
+    sulfur: 'Sulfur'
+    silicon: 'Silicon'
+    zinc: 'Zinc'
+    selenium: 'Selenium'
+    chrome: 'Chrome'
+    iodine: 'Iodine'
   number:
     currency:
       format:

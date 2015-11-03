@@ -16,4 +16,8 @@ module ApplicationHelper
     end
     square
   end
+
+  def products_kind
+    Product::PRODUCT_TYPES.map(&:humanize)
+  end
 end
