@@ -1,10 +1,10 @@
-- if resource.purchases.any?
+.row
+  %h4.col-md-6= link_to_unless(edit, resource.created_at.strftime('%A, %d %b %Y'), cost_path(id: resource.id))
+  %h4.col-md-6= t('application.total', price: all_operation_from_period(resource.purchases))
+- if edit
   .row
-    %h4.col-md-6= link_to_unless(edit, resource.created_at.strftime('%A, %d %b %Y'), cost_path(id: resource.id))
-    %h4.col-md-6= t('application.total', price: all_operation_from_period(resource.purchases))
-  - if edit
-    .row
-      .col-md-12= render 'purchases/form', product: @cost.purchases.build, cost_id: @cost.id
+    .col-md-12= render 'purchases/form', product: @cost.purchases.build, cost_id: @cost.id
+- if resource.purchases.any?
   .row
     .col-md-12
       %table.table.table-condensed
