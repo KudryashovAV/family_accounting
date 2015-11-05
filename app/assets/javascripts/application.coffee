@@ -5,7 +5,13 @@
 #= require bootstrap-datepicker
 #= require underscore
 #= require show-on-value
+#= require select2
+
 
 $ ->
   $('.datepicker').datepicker format: 'dd/mm/yyyy'
   return
+
+$('.select-tags').select2({
+  tags: true
+})
