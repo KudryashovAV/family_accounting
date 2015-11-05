@@ -11,7 +11,7 @@ describe "Home page", type: :feature do
     expect(page).to have_content("Report")
 
     click_link("New product")
-    expect(page).to have_content("Name")
+    expect(page).to have_content("We have")
     click_link("Home")
     click_link("Incomes")
     expect(page).to have_content("Price")

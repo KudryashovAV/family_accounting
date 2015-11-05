@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @product = Product.new(resource_params)
     if @product.save
       flash[:notice] = t('application.flash_created')
-      redirect_to :root
+      redirect_to new_product_url
     else
       flash[:alert] = t('application.error_created')
       render :new

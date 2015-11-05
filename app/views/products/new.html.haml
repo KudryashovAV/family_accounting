@@ -1,1 +1,5 @@
-= render 'form', product: @product
+.row
+  .col-md-2
+    .row.col-md-12= t('application.product_count', count: Product.count).html_safe
+    .row.col-md-12= t('application.new_product_description')
+  .col-md-10= render 'form', product: @product
