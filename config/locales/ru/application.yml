@@ -1,0 +1,76 @@
+ru:
+  application:
+    confirm: 'Вы действительно этого хотите?'
+    flash_created: "Действие успешно!"
+    element_destroyed: "Элемент был успешно удален."
+    error_created: "Пожалуйста, обратите внимание на следующие ошибки:"
+    product_count: "На данный момент мы имеем <strong>%{count}</strong> продуктов в нашей базе данных."
+    new_product_description: "На этой странице вы можете создать новй продукт.Просто введите имя и выберите тип продукта. Если вы хотите, то можете добавить дополнительные опции для съестных продуктов."
+    new_product: "Создать продукт"
+    report: "Отчет"
+    empty_cost: "Пожалуйста, добавьте покупку"
+    costs: "Расходы"
+    incomes: "Доходы"
+    all_cost: "Все расходы"
+    current_cost: "Сегодняшние расходы"
+    name: "Название"
+    manufacturer: "Производитель"
+    kind: "Тип"
+    weight: "Количество(кг/шт)"
+    description: "Описание"
+    reporting_period: "Отчетный период"
+    price: "Цена"
+    unit_price: "Цена за еденицу"
+    total: "Всего: %{price}"
+    total_by_period: "Всего за период: %{price}"
+    remove_purchase: "X"
+    update: "Обновить"
+    add: "Добавить"
+    from: "С"
+    to: "по"
+    calories: 'Каллории'
+    fats: 'Жиры'
+    proteins: 'Белки'
+    carbohydrates: 'Углеводы'
+    vitamin_a: 'Витамин A'
+    vitamin_b1: 'Витамин B1'
+    vitamin_b2: 'Витамин B2'
+    vitamin_b3: 'Витамин B3'
+    vitamin_b4: 'Витамин B4'
+    vitamin_b5: 'Витамин B5'
+    vitamin_b6: 'Витамин B6'
+    vitamin_b7: 'Витамин B7'
+    vitamin_b9: 'Витамин B9'
+    vitamin_b10: 'Витамин B10'
+    vitamin_b11: 'Витамин B11'
+    vitamin_b12: 'Витамин B12'
+    vitamin_b13: 'Витамин B13'
+    vitamin_b15: 'Витамин B15'
+    vitamin_c: 'Витамин C'
+    vitamin_d: 'Витамин D'
+    vitamin_e: 'Витамин E'
+    vitamin_k: 'Витамин K'
+    vitamin_n: 'Витамин N'
+    vitamin_p: 'Витамин P'
+    vitamin_u: 'Витамин U'
+    calcium: 'Кальций'
+    iron: 'Железо'
+    potassium: 'Калий'
+    copper: 'Медь'
+    manganese: 'Марганец'
+    magnesium: 'магний'
+    sodium: 'Натрий'
+    sulfur: 'Сера'
+    silicon: 'Кремний'
+    zinc: 'Цинк'
+    selenium: 'Селен'
+    chrome: 'Хром'
+    iodine: 'Йод'
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        separator: ","
+        delimiter: "."
+        precision: 2
+        unit: ''
