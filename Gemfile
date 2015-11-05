@@ -22,7 +22,6 @@ gem "bootstrap-datepicker-rails", require: 'bootstrap-datepicker-rails', git: 'g
 gem "factory_girl_rails"
 gem "coffee-rails"
 gem "underscore-rails"
-gem 'sprockets', '~> 3.0'
 
 group :development do
   gem "spring"

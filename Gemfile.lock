@@ -320,7 +320,6 @@ DEPENDENCIES
   simplecov
   spring
   spring-commands-rspec
-  sprockets (~> 3.0)
   thin
   timecop
   uglifier
