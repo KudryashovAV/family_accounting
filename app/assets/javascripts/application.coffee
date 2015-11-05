@@ -3,9 +3,7 @@
 #= require bootstrap-sprockets
 #= require dynamic-fields-for
 #= require bootstrap-datepicker
-#= require underscore
-#= require show-on-value
-#= require select2
+
 
 
 $ ->
