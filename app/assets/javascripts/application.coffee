@@ -12,6 +12,5 @@ $ ->
   $('.datepicker').datepicker format: 'dd/mm/yyyy'
   return
 
-$('.select-tags').select2({
-  tags: true
-})
+$ ->
+  $('.purchase-product-select').select2();
