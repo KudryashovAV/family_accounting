@@ -1,5 +1,6 @@
 en:
   application:
+    home_page: 'Home'
     confirm: 'Are you shure?'
     flash_created: "The operation was successful"
     element_destroyed: "Element has been destroyed"

@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
   end
 
   def group_by_period(collection, attribute, period)
-    collection.sort_by{|x| x.send(attribute)}.reverse.group_by{|i| i.send(attribute).strftime(period)}
+    collection.sort_by{|x| x.send(attribute)}.reverse.group_by{|i| I18n.l(i.send(attribute), format: period)}
   end
 end

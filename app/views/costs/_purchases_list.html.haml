@@ -1,5 +1,5 @@
 .row
-  %h4.col-md-6= link_to_unless(edit, resource.created_at.strftime('%A, %d %b %Y'), cost_path(id: resource.id))
+  %h4.col-md-6= link_to_unless(edit, l(resource.created_at, format: '%A, %d %b %Y'), cost_path(id: resource.id))
   %h4.col-md-6= t('application.total', price: all_operation_from_period(resource.purchases))
 - if edit
   .row
