@@ -1,6 +1,6 @@
 ru:
   application:
-    home_page: 'Домашний учет'
+    home_page: 'Accounting'
     confirm: 'Вы действительно этого хотите?'
     flash_created: "Действие успешно!"
     element_destroyed: "Элемент был успешно удален."

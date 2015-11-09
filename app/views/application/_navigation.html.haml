@@ -1,12 +1,8 @@
-%nav.navbar.navbar-default
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      .home-link= link_to t('application.home_page'), root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'navigation_links'
+.row
+  .col-md-12.home-link
+    = link_to root_path do
+      = t('application.home_page')
+.row.main-menu
+  .col-md-12
+    %ul.list-unstyled
+      = render 'navigation_links'

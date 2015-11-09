@@ -6,7 +6,7 @@
   .row
     .col-md-12
       #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
-        .panel.panel-default
+        .panel.panel-warning
           .panel-heading{role: "tab", id: "cost_title_#{period.gsub(/\s/, '')}" }
             %h4.panel-title
               %a{"aria-controls" => "coolapse_cost_#{period.gsub(/\s/, '')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_cost_#{period.gsub(/\s/, '')}"}
@@ -16,5 +16,5 @@
                   .col-md-2= t('application.total', price:  all_operation_from_period(costs.map{|cost| cost.purchases}))
           .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_cost_#{period.gsub(/\s/, '')}" }
             - costs.each do |cost|
-              .panel.panel-default{id: dom_id(cost)}
+              .panel.panel-warning{id: dom_id(cost)}
                 = render 'purchases_list', resource: cost, edit: false

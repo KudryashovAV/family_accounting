@@ -11,12 +11,15 @@
   %body
     #wrap
       %header
-        = render 'navigation'
-      .container
+        
+      .container-fluid
         .row
           .col-sm-6.col-sm-offset-3.text-center
             = render 'flashes'
         .row
-          .col-sm-12
+          .col-sm-2
+            = render 'navigation'
+          .col-sm-8
             = yield
+          .col-sm-2
     = render 'javascript'
