@@ -6,7 +6,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to t('application.home_page'), root_path, class: 'navbar-brand'
+      .home-link= link_to t('application.home_page'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'navigation_links'
