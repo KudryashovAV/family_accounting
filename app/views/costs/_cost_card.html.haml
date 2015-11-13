@@ -1,0 +1,9 @@
+.row
+  .col-sm-12
+    .row
+      %h4.col-md-12= l(resource.created_at, format: '%d %b %Y, %A')
+.card-divider-header
+.card-divider-footer
+  .row
+    .col-md-8.text-footer= t('application.total', price: all_operation_from_period(resource.purchases))
+    .col-md-2.show-section= link_to '', cost_path(id: resource.id), class: 'glyphicon glyphicon-menu-right show-glypicon'
