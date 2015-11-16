@@ -4,6 +4,7 @@ en:
     confirm: 'Are you shure?'
     flash_created: "The operation was successful"
     element_destroyed: "Element has been destroyed"
+    error_balance: "In this action is not enough money."
     error_created: "Please review the problems below:"
     product_count: "We have <strong>%{count}</strong> products in our database on this moment."
     new_product_description: "On this page you can create new products. Just enter the name and kind of product. If you want add additional options for edible products."

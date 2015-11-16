@@ -1,6 +1,6 @@
 class IncomesController < ApplicationController
   def index
-    @incomes_per_current_month = Income.incomes_per_current_month
+    @incomes_per_current_month = Income.incomes_per_month(Date.today)
     @incomes = group_by_period(incomes_without_current_mont, :reporting_period, '%B %Y')
   end
 
@@ -11,6 +11,7 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(resource_params)
     if @income.save
+      Balance.create(amount: (Balance.last.amount + @income.price))
       flash[:notice] = t('application.flash_created')
       redirect_to incomes_path
     else

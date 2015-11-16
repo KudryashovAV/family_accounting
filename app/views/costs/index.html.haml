@@ -1,12 +1,9 @@
 .row
-  .col-md-6
-  .col-md-3
-  %h4.col-md-3#total_by_period= t('application.total_by_period', price: all_costs_from_period(@costs))
-.row
   .col-md-12
     - @current_period_costs.each do |current_period_cost|
-      .col-sm-6.col-md-4.col-lg-2.cost-card
-        = render 'cost_card', resource: current_period_cost
+      = link_to cost_path(id: current_period_cost.id) do
+        .col-sm-6.col-md-4.col-lg-2.cost-card
+          = render 'cost_card', resource: current_period_cost
 - @costs.each_pair do |period, costs|
   .row
     .col-md-12

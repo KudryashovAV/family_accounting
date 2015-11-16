@@ -8,6 +8,11 @@
   color: #333;
   background: rgba(104,115,177,.3);
 
+  a, a:hover, a:focus {
+    color: #333;
+    text-decoration: none;
+  }
+
   .card-divider-footer {
     position: absolute;
     bottom: 45px;
@@ -23,16 +28,6 @@
     width: 265px;
     height: 1px;
     background: #e0e5e5;
-  }
-
-  .show-section {
-    position: absolute;
-    border-radius: 0px 0px 15px 0px;
-    top: 1px;
-    right: 0px;
-    width: 45px;
-    height: 45px;
-    background: #ffffff;
   }
 
   .text-footer {

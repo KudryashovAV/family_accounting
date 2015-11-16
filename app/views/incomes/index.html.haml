@@ -10,6 +10,6 @@
                 .row
                   .col-md-6= period
                   .col-md-4
-                  .col-md-2= t('application.total', price: number_to_currency(all_operation_from_period(incomes), unit: '€'))
+                  .col-md-2= t('application.total', price: number_to_currency(all_operation_from_period(incomes)))
           .panel-collapse.collapse{"aria-labelledby" => "income_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_income_#{period.gsub(/\s/, '')}" }
             = render 'incomes_card', incomes_collection: incomes, create: false

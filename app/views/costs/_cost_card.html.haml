@@ -7,10 +7,9 @@
   .col-md-12
     = t('application.purchases_count', size: resource.purchases.count)
   .col-md-12
-    = t('application.month_incomes', income: 'TODO')
+    = t('application.month_incomes', income: sum_incomes_per_month(resource.created_at))
   .col-md-12
-    = t('application.free_money', money: 'TODO')
+    = t('application.free_money', money: number_to_currency(Balance.last.amount))
 .card-divider-footer
   .row
-    .col-md-8.text-footer= t('application.total', price: all_operation_from_period(resource.purchases))
-    .col-md-2.show-section= link_to '', cost_path(id: resource.id), class: 'glyphicon glyphicon-menu-right show-glypicon'
+    .col-md-12.text-footer= t('application.total', price: number_to_currency(all_operation_from_period(resource.purchases)))

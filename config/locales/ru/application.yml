@@ -4,6 +4,7 @@ ru:
     confirm: 'Вы действительно этого хотите?'
     flash_created: "Действие успешно!"
     element_destroyed: "Элемент был успешно удален."
+    error_balance: "На это действие недостаточно денег."
     error_created: "Пожалуйста, обратите внимание на следующие ошибки:"
     product_count: "На данный момент мы имеем <strong>%{count}</strong> продуктов в нашей базе данных."
     new_product_description: "На этой странице вы можете создать новый продукт.Просто введите имя и выберите тип продукта. Если вы хотите, то можете добавить дополнительные опции для съестных продуктов."
@@ -87,3 +88,18 @@ ru:
         price: 'Цена'
         reporting_period: 'Отчетный период'
         description: 'Описание'
+    errors:
+      models:
+        income:
+          attributes:
+            price:
+              greater_than_or_equal_to: 'Значение не может быть меньше 0'
+              less_than_or_equal_to: 'Значение не может быть больше 99.999.999'
+        purchase:
+          attributes:
+            weight:
+              greater_than_or_equal_to: 'Значение не может быть меньше 0'
+              less_than_or_equal_to: 'Значение не может быть больше 999'
+            unit_price:
+              greater_than_or_equal_to: 'Значение не может быть меньше 0'
+              less_than_or_equal_to: 'Значение не может быть больше 9.999.999'

@@ -20,4 +20,8 @@ module ApplicationHelper
   def products_kind
     Product::PRODUCT_TYPES.map(&:humanize)
   end
+
+  def sum_incomes_per_month(date)
+    Income.incomes_per_month(date).map(&:price).reduce(&:+) || 0
+  end
 end
