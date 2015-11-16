@@ -1,13 +1,15 @@
 require "rails_helper"
 
 describe "Home page", type: :feature do
+
+  let!(:balance1){create(:balance)}
+
   it "Should be work" do
     visit "/"
     expect(page).to have_content("Home")
     expect(page).to have_content("New product")
     expect(page).to have_content("Incomes")
-    expect(page).to have_content("Today costs")
-    expect(page).to have_content("All costs")
+    expect(page).to have_content("Costs")
     expect(page).to have_content("Report")
 
     click_link("New product")
@@ -16,11 +18,8 @@ describe "Home page", type: :feature do
     click_link("Incomes")
     expect(page).to have_content("Price")
     click_link("Home")
-    click_link("Today costs")
-    expect(page).to have_content("Product")
-    click_link("Home")
-    click_link("All costs")
-    expect(page).to have_content("Total")
+    click_link("Costs")
+    expect(page).to have_content("Incomes in this month")
     click_link("Home")
     click_link("Report")
     expect(page).to have_content("From")
