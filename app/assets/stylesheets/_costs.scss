@@ -1,0 +1,44 @@
+.cost-card {
+  position: relative;
+  display: block;
+  border-radius: 15px;
+  width: 265px;
+  height: 280px;
+  margin: 5px;
+  color: #333;
+  background: rgba(104,115,177,.3);
+
+  .card-divider-footer {
+    position: absolute;
+    bottom: 45px;
+    left: 0px;
+    width: 265px;
+    height: 1px;
+    background: #e0e5e5;
+  }
+  .card-divider-header {
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    width: 265px;
+    height: 1px;
+    background: #e0e5e5;
+  }
+
+  .show-section {
+    position: absolute;
+    border-radius: 0px 0px 15px 0px;
+    top: 1px;
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    background: #ffffff;
+  }
+
+  .text-footer {
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    font-size: 1.2em;
+  }
+}

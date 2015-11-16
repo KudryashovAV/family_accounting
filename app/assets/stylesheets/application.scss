@@ -5,6 +5,8 @@
 @import "bootstrap-datepicker";
 @import "select2";
 @import "bootsrap-customise";
+@import "fonts";
+@import "costs";
 
 html {
   min-height: 100%;
@@ -20,12 +22,10 @@ body {
   background-color: rgba(248,239,224,0.5);
 }
 
-.remove_attributes {
-  margin-top: 12px;
-}
 .add_purchase {
   margin-top: 24px;
 }
+
 .only_foods {
   display: none;
 }
@@ -51,70 +51,8 @@ body {
     }
   }
 }
-@font-face {
-  font-family: 'gulagdecay';
-  src:url('gulagdecay.ttf')
-}
-@font-face {
-  font-family: 'diane-de-france';
-  src:url('diane-de-france.ttf')
-}
-@font-face {
-  font-family: 'southernaire';
-  src:url('southernaire.ttf')
-}
-@font-face {
-  font-family: 'zantroke';
-  src:url('zantroke.otf')
-}
 
 .show-glypicon {
   font-size: 1.2em;
-  margin-top: 20px;
-  margin-left: 8px;
-}
-
-.cost-card {
-  position: relative;
-  display: block;
-  border-radius: 15px;
-  width: 265px;
-  height: 280px;
-  margin: 5px;
-  color: #333;
-  background: rgba(104,115,177,.3);
-
-  .card-divider-footer {
-    position: absolute;
-    bottom: 58px;
-    left: 0px;
-    width: 265px;
-    height: 1px;
-    background: #e0e5e5;
-  }
-  .card-divider-header {
-    position: absolute;
-    top: 58px;
-    left: 0px;
-    width: 265px;
-    height: 1px;
-    background: #e0e5e5;
-  }
-
-  .show-section {
-    position: absolute;
-    border-radius: 0px 0px 15px 0px;
-    top: 1px;
-    right: 0px;
-    width: 58px;
-    height: 58px;
-    background: #ffffff;
-  }
-
-  .text-footer {
-    position: absolute;
-    top: 15px;
-    left: 0px;
-    font-size: 1.2em;
-  }
+  margin-top: 12px;
 }

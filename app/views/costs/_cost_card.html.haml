@@ -3,6 +3,13 @@
     .row
       %h4.col-md-12= l(resource.created_at, format: '%d %b %Y, %A')
 .card-divider-header
+.row
+  .col-md-12
+    = t('application.purchases_count', size: resource.purchases.count)
+  .col-md-12
+    = t('application.month_incomes', income: 'TODO')
+  .col-md-12
+    = t('application.free_money', money: 'TODO')
 .card-divider-footer
   .row
     .col-md-8.text-footer= t('application.total', price: all_operation_from_period(resource.purchases))
