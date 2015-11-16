@@ -1,6 +1,8 @@
 en:
   application:
     home_page: 'Home'
+    product: 'Product'
+    add_purchase: 'Add purchase'
     archive: 'Archive'
     confirm: 'Are you shure?'
     flash_created: "The operation was successful"

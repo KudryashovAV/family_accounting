@@ -1,6 +1,17 @@
-= simple_form_for product do |f|
-  .col-md-3= f.input :product_id, collection: Product.all, input_html: { class: 'purchase-product-select' }
-  .col-md-3= f.input :weight, label: t('application.weight')
-  .col-md-3= f.input :unit_price
-  = f.input :cost_id, as: :hidden, input_html: {value: params[:id] || params[:purchase][:cost_id]}
-  .col-md-3= f.submit t('application.add'), class: "btn btn-default add_purchase"
+.row
+  .col-md-12.text-header
+    = t('application.add_purchase')
+.card-divider-header
+  .text-body
+    = simple_form_for product, html: { id: :purchase_form } do |f|
+      .row
+        .col-md-12= f.input :product_id, collection: Product.all, input_html: { data: {placeholder: t('application.product')}, class: 'purchase-product-select' }, label: false
+      .row
+        .col-md-12= f.input :weight, label: t('application.weight'), placeholder: t('application.weight'), label: false
+      .row
+        .col-md-12= f.input :unit_price, placeholder: t('application.unit_price'), label: false
+      = f.input :cost_id, as: :hidden, input_html: {value: params[:id] || params[:purchase][:cost_id]}
+.card-divider-footer
+  .row
+    .col-md-12.text-footer
+      = link_to '', '#', class: 'glyphicon glyphicon-plus'

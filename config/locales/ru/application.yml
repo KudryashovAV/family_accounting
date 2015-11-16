@@ -1,6 +1,8 @@
 ru:
   application:
     home_page: 'Accounting'
+    product: 'Продукт'
+    add_purchase: 'Добавить покупку'
     archive: 'Архив'
     confirm: 'Вы действительно этого хотите?'
     flash_created: "Действие успешно!"

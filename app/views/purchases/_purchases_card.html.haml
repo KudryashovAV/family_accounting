@@ -1,0 +1,27 @@
+- resource.purchases.each do |purchase|
+  - if purchase.persisted?
+    .col-md-3.purchase-card
+      .row
+        .col-md-12.text-header
+          = "#{purchase.product.name}"
+      .card-divider-header
+        .text-body
+          .row
+            .col-md-12
+              #{t('application.manufacturer')}: #{purchase.product.manufacturer}
+          .row
+            .col-md-12
+              #{t('application.kind')}: #{purchase.product.kind}
+          .row
+            .col-md-12
+              #{t('application.weight')}: #{number_to_currency(purchase.weight)}
+          .row
+            .col-md-12
+              #{t('application.unit_price')}: #{number_to_currency(purchase.unit_price)}
+          .row
+            .col-md-12
+              #{t('application.price')}: #{number_to_currency(purchase.price)}
+      .card-divider-footer
+        .row
+          .col-md-12.text-footer
+            = link_to '', purchase_path(id: purchase.id), method: 'delete', data: {confirm: t('application.confirm')}, class: 'glyphicon glyphicon-trash'

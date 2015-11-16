@@ -14,3 +14,8 @@ $ ->
 
 $ ->
   $('.purchase-product-select').select2();
+
+
+$('a.glyphicon.glyphicon-plus').click ->
+  $('#purchase_form').submit()
+  return

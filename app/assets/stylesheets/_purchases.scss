@@ -1,0 +1,52 @@
+.purchase-card {
+  position: relative;
+  display: block;
+  border-radius: 15px;
+  width: 265px;
+  height: 280px;
+  margin: 8px;
+  color: #333;
+  background: rgba(104,115,177,.3);
+
+  .card-divider-header {
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    width: 265px;
+    height: 1px;
+    background: #e0e5e5;
+  }
+
+  .card-divider-footer {
+    position: absolute;
+    bottom: 45px;
+    left: 0px;
+    width: 265px;
+    height: 1px;
+    background: #e0e5e5;
+  }
+
+  .text-footer {
+    position: absolute;
+    text-align: center;
+    top: 6px;
+    left: 0px;
+    font-size: 2em;
+    a, a:hover {
+      color: #333;
+    }
+  }
+  .text-header {
+    position: absolute;
+    text-align: left;
+    top: 6px;
+    font-size: 1.1em;
+  }
+  .text-body {
+    position: absolute;
+    text-align: left;
+    top: 12px;
+    left: 12px;
+    font-size: 1.1em;
+  }
+}
