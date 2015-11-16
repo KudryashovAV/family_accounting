@@ -1,6 +1,7 @@
 ru:
   application:
     home_page: 'Accounting'
+    archive: 'Архив'
     confirm: 'Вы действительно этого хотите?'
     flash_created: "Действие успешно!"
     element_destroyed: "Элемент был успешно удален."
@@ -16,7 +17,7 @@ ru:
     empty_cost: "Пожалуйста, добавьте покупку"
     costs: "Расходы"
     incomes: "Доходы"
-    all_cost: "Все расходы"
+    all_costs: "Расходы"
     current_cost: "Сегодняшние расходы"
     name: "Название"
     manufacturer: "Производитель"

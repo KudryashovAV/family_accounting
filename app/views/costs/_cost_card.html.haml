@@ -6,10 +6,11 @@
 .row
   .col-md-12
     = t('application.purchases_count', size: resource.purchases.count)
-  .col-md-12
-    = t('application.month_incomes', income: sum_incomes_per_month(resource.created_at))
-  .col-md-12
-    = t('application.free_money', money: number_to_currency(Balance.last.amount))
+  - unless resource.created_at.month == Date.today.month
+    .col-md-12
+      = t('application.month_incomes', income: sum_incomes_per_month(resource.created_at))
+    .col-md-12
+      = t('application.free_money', money: number_to_currency(Balance.last.amount))
 .card-divider-footer
   .row
     .col-md-12.text-footer= t('application.total', price: number_to_currency(all_operation_from_period(resource.purchases)))

@@ -1,0 +1,5 @@
+.row
+  .col-md-12
+    = t('application.month_incomes', income: sum_incomes_per_month(Date.today))
+  .col-md-12
+    = t('application.free_money', money: number_to_currency(Balance.last.amount))

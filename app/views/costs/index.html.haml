@@ -4,19 +4,16 @@
       = link_to cost_path(id: current_period_cost.id) do
         .col-sm-6.col-md-4.col-lg-2.cost-card
           = render 'cost_card', resource: current_period_cost
-- @costs.each_pair do |period, costs|
-  .row
-    .col-md-12
-      #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
-        .panel.panel-warning
-          .panel-heading{role: "tab", id: "cost_title_#{period.gsub(/\s/, '')}" }
-            %h4.panel-title
-              %a{"aria-controls" => "coolapse_cost_#{period.gsub(/\s/, '')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_cost_#{period.gsub(/\s/, '')}"}
-                .row
-                  .col-md-6= period
-                  .col-md-4
-                  .col-md-2= t('application.total', price:  all_operation_from_period(costs.map{|cost| cost.purchases}))
-          .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{period.gsub(/\s/, '')}", :role => "tabpanel", id: "coolapse_cost_#{period.gsub(/\s/, '')}" }
-            - costs.each do |cost|
-              .panel.panel-warning{id: dom_id(cost)}
-                = render 'cost_card', resource: cost
+.row
+  .col-md-12
+    #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
+      .panel.panel-warning
+        .panel-heading{role: "tab", id: "cost_title_#{t('application.archive')}" }
+          %h4.panel-title
+            %a{"aria-controls" => "coolapse_cost_#{t('application.archive')}", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#coolapse_cost_#{t('application.archive')}"}
+              .row
+                .col-md-6= t('application.archive')
+        .panel-collapse.collapse{"aria-labelledby" => "cost_title_#{t('application.archive')}", :role => "tabpanel", id: "coolapse_cost_#{t('application.archive')}" }
+          - @all_costs.each_key do |period|
+            .panel.panel-warning.col-md-3
+              =link_to period, costs_path(date: period)
