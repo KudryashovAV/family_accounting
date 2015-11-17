@@ -7,9 +7,9 @@
       .row
         .col-md-12= f.input :product_id, collection: Product.all, input_html: { data: {placeholder: t('application.product')}, class: 'purchase-product-select' }, label: false
       .row
-        .col-md-12= f.input :weight, label: t('application.weight'), placeholder: t('application.weight'), label: false
+        .col-md-12= f.input :weight, label: false, placeholder: t('application.weight')
       .row
-        .col-md-12= f.input :unit_price, placeholder: t('application.unit_price'), label: false
+        .col-md-12= f.input :unit_price, label: false, placeholder: t('application.unit_price')
       = f.input :cost_id, as: :hidden, input_html: {value: params[:id] || params[:purchase][:cost_id]}
 .card-divider-footer
   .row

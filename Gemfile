@@ -45,6 +45,7 @@ end
 
 group :test do
   gem "database_cleaner"
+  gem "capybara-select2", git: "git://github.com/goodwill/capybara-select2.git"
   gem "formulaic"
   gem "launchy"
   gem "poltergeist"
