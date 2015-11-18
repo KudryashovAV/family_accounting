@@ -1,6 +1,7 @@
 en:
   application:
     home_page: 'Home'
+    hello: 'To use the service please login first: %{links}'
     product: 'Product'
     add_purchase: 'Add purchase'
     archive: 'Archive'

@@ -1,6 +1,7 @@
 ru:
   application:
     home_page: 'Accounting'
+    hello: 'Чтобы воспользоваться сервисом, пожалуйста, залогинтесь: %{links}'
     product: 'Продукт'
     add_purchase: 'Добавить покупку'
     archive: 'Архив'

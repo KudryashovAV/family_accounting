@@ -1,0 +1,2 @@
+- resource_class.omniauth_providers.each do |provider|
+  = link_to image_tag("#{provider}.png", alt: provider.capitalize), omniauth_authorize_path(resource_name, provider)
