@@ -1,10 +1,24 @@
-- if user_signed_in?
+- unless user_signed_in?
+  .row
+    .col-md-12
+      = t('application.hello', links: (render "devise/shared/links", resource_name: :user, resource_class: User)).html_safe
+- else
   .row
     .col-md-12
       = t('application.month_incomes', income: sum_incomes_per_month(current_user, Date.today))
     .col-md-12
       = t('application.free_money', money: number_to_currency(current_user.balances.last.amount))
-- else
+    .col-md-12
+      = t('application.purchases_count_per_month', size: purchases_per_month(current_user, Date.today).count)
   .row
     .col-md-12
-      = t('application.hello', links: (render "devise/shared/links", resource_name: :user, resource_class: User)).html_safe
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th= t('application.kind')
+            %th= t('application.price')
+          - kind_of_purchase_per_month(current_user, Date.today).each_pair do |kind, purchases|
+            %tbody
+              %tr
+                %td= kind
+                %td= purchases.map(&:price).reduce(&:+)

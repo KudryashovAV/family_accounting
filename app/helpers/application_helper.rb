@@ -24,4 +24,12 @@ module ApplicationHelper
   def sum_incomes_per_month(user, date)
     user.incomes.incomes_per_month(date).map(&:price).reduce(&:+) || 0
   end
+
+  def purchases_per_month(user, date)
+    user.purchases.purchase_per_month(date)
+  end
+
+  def kind_of_purchase_per_month(user, date)
+    purchases_per_month(user, date).group_by{|purchase| purchase.product.kind}
+  end
 end
