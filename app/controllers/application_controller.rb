@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_cost
 
   def current_cost
-    @current_cost = Cost.where('created_at > ?', Date.today).first || Cost.create
+    @current_cost = current_user.costs.where('created_at > ?', Date.today).first || current_user.costs.create
   end
 
   def group_by_period(collection, attribute, period)

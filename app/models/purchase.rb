@@ -1,6 +1,7 @@
 class Purchase < ActiveRecord::Base
   belongs_to :product
   belongs_to :cost
+  belongs_to :user
 
   validates :product, presence: true
   validates :cost, presence: true

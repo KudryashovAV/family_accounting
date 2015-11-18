@@ -1,4 +1,6 @@
 class Cost < ActiveRecord::Base
+  belongs_to :user
+  
   has_many :purchases, inverse_of: :cost, dependent: :destroy
   has_many :products, through: :purchases
 

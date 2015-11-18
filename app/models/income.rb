@@ -1,4 +1,6 @@
 class Income < ActiveRecord::Base
+  belongs_to :user
+
   validates :price, :reporting_period, presence: true
   validates :price, numericality: {
     less_than_or_equal_to: 9_999_999_999,

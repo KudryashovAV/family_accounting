@@ -1,10 +1,10 @@
 class PurchasesController < ApplicationController
   def new
-    @purchase = Purchase.new
+    @purchase = current_user.purchases.build
   end
 
   def create
-    @purchase = Purchase.new(resource_params)
+    @purchase = current_user.purchases.build(resource_params)
     if calculate_balance(@purchase)
       if @purchase.save
         flash[:notice] = t('application.flash_created')
@@ -20,9 +20,10 @@ class PurchasesController < ApplicationController
   end
 
   def destroy
-    purchase = Purchase.find(params[:id])
+    purchase = current_user.purchases.find(params[:id])
     cost = purchase.cost
     purchase.destroy
+    current_user.balances.create(amount: (current_user.balances.last.amount + purchase.price))
     flash[:notice] = t('application.element_destroyed')
     redirect_to cost_path(id: cost.id)
   end
@@ -34,7 +35,7 @@ class PurchasesController < ApplicationController
   end
 
   def calculate_balance(purchase)
-    new_amount = Balance.last.amount - purchase.set_price
-    Balance.create(amount: (new_amount)) if new_amount > 0
+    new_amount = current_user.balances.last.amount - purchase.set_price
+    current_user.balances.create(amount: (new_amount)) if new_amount > 0
   end
 end

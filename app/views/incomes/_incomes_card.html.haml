@@ -1,6 +1,6 @@
 .row
   - if create
-    .col-md-12= render 'form', product: Income.new
+    .col-md-12= render 'form', product: current_user.incomes.build
 .panel.panel-default
   %table.table.table-condensed
     %thead

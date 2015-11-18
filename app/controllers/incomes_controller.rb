@@ -1,17 +1,17 @@
 class IncomesController < ApplicationController
   def index
-    @incomes_per_current_month = Income.incomes_per_month(Date.today)
+    @incomes_per_current_month = current_user.incomes.incomes_per_month(Date.today)
     @incomes = group_by_period(incomes_without_current_mont, :reporting_period, '%B %Y')
   end
 
   def new
-    @income = Income.new
+    @income = current_user.incomes.build
   end
 
   def create
-    @income = Income.new(resource_params)
+    @income = current_user.incomes.build(resource_params)
     if @income.save
-      Balance.create(amount: (Balance.last.amount + @income.price))
+      current_user.balances.create(amount: (current_user.balances.last.amount + @income.price))
       flash[:notice] = t('application.flash_created')
       redirect_to incomes_path
     else
@@ -21,8 +21,9 @@ class IncomesController < ApplicationController
   end
 
   def destroy
-    income = Income.find(params[:id])
+    income = current_user.incomes.find(params[:id])
     income.destroy
+    current_user.balances.create(amount: (current_user.balances.last.amount - income.price))
     flash[:notice] = t('application.element_destroyed')
     redirect_to incomes_path
   end
@@ -34,6 +35,6 @@ class IncomesController < ApplicationController
   end
 
   def incomes_without_current_mont
-    Income.all - @incomes_per_current_month
+    current_user.incomes - @incomes_per_current_month
   end
 end
