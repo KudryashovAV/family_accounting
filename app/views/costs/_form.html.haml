@@ -1,11 +1,12 @@
 .row
   .col-sm-12
     .row
-      %h4.col-md-12= 'New cost'
+      %h4.col-md-12= t('application.new_cost')
 .card-divider-header
-= simple_form_for product, html: { id: :purchase_form } do |f|
+= simple_form_for product, html: { id: :cost_form } do |f|
   .row
     .col-md-12= f.input :date, as: :string, input_html: {class: 'datepicker'}, placeholder: 'Date', label: false
 .card-divider-footer
   .row
-    .col-md-12= link_to '', '#', class: 'glyphicon glyphicon-plus'
+    .col-md-12.text-footer
+      = link_to '', '#', class: 'glyphicon glyphicon-plus'

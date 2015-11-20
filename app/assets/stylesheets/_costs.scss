@@ -32,8 +32,12 @@
 
   .text-footer {
     position: absolute;
-    top: 10px;
+    text-align: center;
+    top: 6px;
     left: 0px;
-    font-size: 1.2em;
+    font-size: 2em;
+    a, a:hover {
+      color: #333;
+    }
   }
 }

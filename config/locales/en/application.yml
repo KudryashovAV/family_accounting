@@ -1,44 +1,59 @@
 en:
   application:
+    #general
     home_page: 'Home'
     hello: 'To use the service please login first: %{links}'
-    product: 'Product'
-    add_purchase: 'Add purchase'
-    archive: 'Archive'
     confirm: 'Are you shure?'
     flash_created: "The operation was successful"
     element_destroyed: "Element has been destroyed"
-    error_balance: "In this action is not enough money."
+    free_money: "You're free money: %{money}"
     error_created: "Please review the problems below:"
+    total: "Total: %{price}"
+    total_by_period: "Total by period: %{price}"
+    update: "Update"
+    add: "Add"
+
+    #product
+    product: 'Product'
     product_count: "We have <strong>%{count}</strong> products in our database on this moment."
     new_product_description: "On this page you can create new products. Just enter the name and kind of product. If you want add additional options for edible products."
     new_product: "New product"
+
+    #purchase
+    add_purchase: 'Add purchase'
     purchases_count: "Purchases made: %{size}"
     purchases_count_per_month: "Purchases made per month: %{size}"
-    month_incomes: "Incomes in this month: %{income}"
-    free_money: "You're free money: %{money}"
-    report: "Report"
-    empty_cost: "Please add purchase"
-    costs: "Costs"
-    quantity: "Quantity"
-    incomes: "Incomes"
-    all_costs: "Costs"
-    current_cost: "Today costs"
-    name: "Name"
-    manufacturer: "Manufacturer"
-    kind: "Kind"
-    weight: "Weight(kg/items)"
-    description: "Description"
-    reporting_period: "Reporting period"
-    price: "Price"
-    unit_price: "Unit price"
-    total: "Total: %{price}"
-    total_by_period: "Total by period: %{price}"
     remove_purchase: "X"
-    update: "Update"
-    add: "Add"
-    from: "From"
-    to: "To"
+
+    #cost
+    new_cost: 'New cost'
+    archive: 'Archive'
+    all_costs: "Costs"
+
+    #balance
+    error_balance: "In this action is not enough money."
+
+    #income
+    month_incomes: "Incomes in this month: %{income}"
+    incomes: "Incomes"
+
+    # attributes
+
+    #general
+    description: "Description"
+    price: "Price"
+
+    #purchase
+    weight: "Weight(kg/items)"
+    unit_price: "Unit price"
+
+    #income
+    reporting_period: "Reporting period"
+
+    #product
+    name: "Name"
+    kind: "Kind"
+    manufacturer: "Manufacturer"
     calories: 'Calories'
     fats: 'Fats'
     proteins: 'Proteins'
@@ -77,6 +92,7 @@ en:
     selenium: 'Selenium'
     chrome: 'Chrome'
     iodine: 'Iodine'
+
   number:
     currency:
       format:

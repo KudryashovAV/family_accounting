@@ -19,3 +19,7 @@ $ ->
 $('a.glyphicon.glyphicon-plus').click ->
   $('#purchase_form').submit()
   return
+
+$('a.glyphicon.glyphicon-plus').click ->
+  $('#cost_form').submit()
+  return
