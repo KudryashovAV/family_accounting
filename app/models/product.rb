@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   PRODUCT_TYPES = %w(transport food communal_payments
                      entertainment sweets instruments
                      for_children other vegetables fruits
-                     dairy_products sausage meat cereals
+                     dairy_products clothes meat cereals
                      detergents hygiene_products)
 
   attr_accessor :additional_options
