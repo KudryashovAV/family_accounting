@@ -15,6 +15,7 @@ en:
 
     #product
     product: 'Product'
+    products: 'Products'
     product_count: "We have <strong>%{count}</strong> products in our database on this moment."
     new_product_description: "On this page you can create new products. Just enter the name and kind of product. If you want add additional options for edible products."
     new_product: "New product"

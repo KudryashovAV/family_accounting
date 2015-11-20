@@ -1,6 +1,5 @@
 - if user_signed_in?
-  %li= link_to t('application.new_product'), new_product_path
+  %li= link_to t('application.products'), products_path
   %li= link_to t('application.incomes'), incomes_path
   %li= link_to t('application.all_costs'), costs_path(period: :all)
-  -# %li= link_to t('application.report'), reports_path
   %li= link_to t("devise.shared.links.sign_out"), destroy_user_session_path

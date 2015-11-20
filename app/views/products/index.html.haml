@@ -1,0 +1,23 @@
+.row
+  .col-md-12.product-kind-card
+    .row.head-section
+      .col-sm-11.text-header
+        %h3= t('application.new_product')
+    .card-divider-header
+    .row
+      .col-md-12
+        = render 'form', product: Product.new
+.row
+  - @products.each_pair do |kind, products|
+    .col-md-12.product-kind-card
+      .row.head-section
+        .col-sm-11.text-header
+          %h3= kind
+      .card-divider-header
+      .row
+        - products.each do |product|
+          .col-md-3
+            .row.product-card
+              .col-md-10= truncate(product.name, length: 25)
+              .col-md-2= link_to '', edit_product_path(id: product.id), class: 'glyphicon glyphicon-pencil'
+              .divider

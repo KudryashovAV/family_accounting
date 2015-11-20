@@ -1,4 +1,8 @@
 class ProductsController < ApplicationController
+  def index
+    @products = Product.group_by_kind
+  end
+
   def new
     @product = Product.new
   end
@@ -7,10 +11,25 @@ class ProductsController < ApplicationController
     @product = Product.new(resource_params)
     if @product.save
       flash[:notice] = t('application.flash_created')
-      redirect_to new_product_url
+      redirect_to products_url
     else
       flash[:alert] = t('application.error_created')
       render :new
+    end
+  end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(resource_params)
+      flash[:notice] = t('application.flash_created')
+      redirect_to products_url
+    else
+      flash[:alert] = t('application.error_created')
+      render :edit
     end
   end
 

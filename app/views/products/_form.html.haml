@@ -1,4 +1,4 @@
-= simple_form_for product, url: products_path do |f|
+= simple_form_for product do |f|
   .row
     .col-md-4
       = f.input :name, placeholder: t('application.name'), label: false
@@ -7,8 +7,10 @@
     .col-md-4
       = f.input :manufacturer, placeholder: t('application.manufacturer'), label: false
   .row
-    .col-md-12
+    .col-md-8
       = f.input :description, placeholder: t('application.description'), label: false
+    .col-md-4
+      = f.submit t('application.new_product'), class: 'btn btn-default btn-lg'
   .row.only_foods{ data: { show_on_value_id: 'foods_options' } }
     .col-md-6.form-inline.form-group
       = f.input :calories, placeholder: t('application.calories'), label: false
@@ -49,4 +51,3 @@
       = f.input :vitamin_p, placeholder: t('application.vitamin_p'), label: false
       = f.input :vitamin_u, placeholder: t('application.vitamin_u'), label: false
       = f.input :zinc, placeholder: t('application.zinc'), label: false
-  = f.submit

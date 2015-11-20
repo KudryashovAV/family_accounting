@@ -1,0 +1,49 @@
+.product-kind-card {
+  position: relative;
+  display: block;
+  border-radius: 15px;
+  width: 100%;
+  margin: 15px;
+  color: #333;
+  background: rgba(104,115,177,.3);
+  .head-section {
+    width: 100%;
+    height: 50px;
+    color: rgb(38, 69, 141);
+    vertical-align: middle;
+    .glyphicon-title {
+      font-size: 1.7em;
+      margin-top: 20px;
+    }
+  }
+  a, a:hover, a:focus {
+    color: #333;
+  }
+
+  .card-divider-header {
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background: #e0e5e5;
+  }
+
+  .text-header {
+    margin-top: -10px;
+    margin-left: 10px;
+  }
+
+  .product-card {
+    height: 20px;
+    margin-bottom: 10px;
+    .divider {
+      margin-left: 10px;
+      width: 90%;
+      margin-top: 20px;
+      height: 1px;
+      background: #e0e5e5;
+    }
+  }
+
+}
