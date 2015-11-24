@@ -3,5 +3,5 @@
   %h4.col-md-6= t('application.total', price: all_operation_from_period(resource.purchases))
 .row
   = render 'purchases/purchases_card', resource: resource
-  .col-md-3.purchase-card
+  .col-md-3.purchase-card#new_purchase
     = render 'purchases/form', product: resource.purchases.build, cost_id: @cost.id

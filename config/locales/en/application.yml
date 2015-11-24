@@ -32,7 +32,7 @@ en:
     all_costs: "Costs"
 
     #balance
-    error_balance: "In this action is not enough money."
+    error_balance: "For this action is not enough money."
 
     #income
     month_incomes: "Incomes in this month: %{income}"

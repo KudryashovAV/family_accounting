@@ -24,6 +24,21 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = false
+  config.include Warden::Test::Helpers
+  config.before :suite do
+    Warden.test_mode!
+  end
+
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+                                                                     provider: 'google_oauth2',
+                                                                     uid: '123545',
+                                                                     info: {
+                                                                     email: 'test@google.com',
+                                                                     first_name: 'Mikola',
+                                                                     last_name: 'Piterskiy'}
+                                                                     })
 
   if config.filter_manager.inclusions[:ci]
     Capybara.javascript_driver = :poltergeist

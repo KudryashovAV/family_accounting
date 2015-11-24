@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   after_create :create_new_balance
 
   def create_new_balance
-    self.create_balance(amount: 0)
+    self.balances.create(amount: 0)
   end
 end
