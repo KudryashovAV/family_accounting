@@ -13,6 +13,10 @@ en:
     update: "Update"
     add: "Add"
 
+    #planned_cost
+    planned_costs: "Planned costs"
+    date: "Date"
+
     #product
     product: 'Product'
     products: 'Products'

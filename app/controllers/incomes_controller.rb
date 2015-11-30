@@ -12,6 +12,7 @@ class IncomesController < ApplicationController
     @income = current_user.incomes.build(resource_params)
     if @income.save
       current_user.balances.create(amount: (current_user.balances.last.amount + @income.price))
+      current_user.planned_costs.create(planned_price: (@income.price * 0.1), planned_period: @income.reporting_period, kind: 'Tithe')
       flash[:notice] = t('application.flash_created')
       redirect_to incomes_path
     else

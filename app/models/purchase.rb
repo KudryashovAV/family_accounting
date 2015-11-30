@@ -18,7 +18,7 @@ class Purchase < ActiveRecord::Base
   }
 
   scope :purchase_per_month, ->(date) {
-    where('created_at >= ? AND created_at <= ?', date.beginning_of_month, date.end_of_month)
+    where('created_at >= ? AND created_at <= ?', date.beginning_of_month, date.end_of_month.next_day)
   }
 
   before_save :set_price

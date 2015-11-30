@@ -22,3 +22,20 @@
               %tr
                 %td= kind
                 %td= purchases.map(&:price).reduce(&:+)
+  .row
+    .col-md-12
+      = t('application.planned_costs')
+  .row
+    .col-md-12
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th= t('application.kind')
+            %th= t('application.price')
+            %th= t('application.date')
+          - current_user.planned_costs.not_paid.each do |planned_cost|
+            %tbody
+              %tr
+                %td= planned_cost.kind
+                %td= planned_cost.planned_price
+                %td= link_to "#{planned_cost.planned_period}", edit_planned_cost_path(id: planned_cost.id)

@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include Identity::Mixins::User
   has_many :costs, inverse_of: :user, dependent: :destroy
+  has_many :planned_costs, inverse_of: :user, dependent: :destroy
   has_many :incomes, inverse_of: :user, dependent: :destroy
   has_many :balances, inverse_of: :user, dependent: :destroy
   has_many :purchases, inverse_of: :user, dependent: :destroy

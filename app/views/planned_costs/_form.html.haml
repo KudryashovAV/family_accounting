@@ -1,0 +1,9 @@
+= simple_form_for product do |f|
+  .col-md-3= f.input :planned_price
+  .col-md-3= f.input :real_price
+  .col-md-3= f.input :planned_period, as: :string, input_html: {class: 'datepicker'}
+  .col-md-3= f.input :real_period, as: :string, input_html: {class: 'datepicker'}
+  .col-md-3= f.input :kind
+  .col-md-3= f.input :description
+  .col-md-3= f.input :paid, as: :boolean
+  .col-md-3= f.submit t('application.add'), class: "btn btn-default add_purchase"

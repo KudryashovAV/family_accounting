@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
                      entertainment sweets instruments
                      for_children other vegetables fruits
                      dairy_products clothes meat cereals
-                     detergents hygiene_products)
+                     detergents hygiene_products tithe)
 
   attr_accessor :additional_options
 

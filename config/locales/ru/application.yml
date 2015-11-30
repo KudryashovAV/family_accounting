@@ -13,6 +13,10 @@ ru:
     update: "Обновить"
     add: "Добавить"
 
+    #planned_cost
+    planned_costs: "Запланированые расходы"
+    date: "Дата"
+
     #product
     product: 'Продукт'
     products: 'Продукты'
