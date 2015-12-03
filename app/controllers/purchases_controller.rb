@@ -5,6 +5,7 @@ class PurchasesController < ApplicationController
 
   def create
     @purchase = current_user.purchases.build(resource_params)
+    @purchase.created_at = @purchase.cost.created_at
     if calculate_balance(@purchase)
       if @purchase.save
         flash[:notice] = t('application.flash_created')

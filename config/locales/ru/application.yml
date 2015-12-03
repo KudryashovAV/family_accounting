@@ -1,9 +1,9 @@
 ru:
   application:
     #general
-    home_page: 'Accounting'
-    hello: 'Чтобы воспользоваться сервисом, пожалуйста, залогинтесь: %{links}'
-    confirm: 'Вы действительно этого хотите?'
+    home_page: "Accounting"
+    hello: "Чтобы воспользоваться сервисом, пожалуйста, залогинтесь: %{links}"
+    confirm: "Вы действительно этого хотите?"
     flash_created: "Действие успешно!"
     element_destroyed: "Элемент был успешно удален."
     free_money: "Осталось свободных денег: %{money}"
@@ -18,22 +18,23 @@ ru:
     date: "Дата"
 
     #product
-    product: 'Продукт'
-    products: 'Продукты'
+    product: "Продукт"
+    products: "Продукты"
     product_count: "На данный момент мы имеем <strong>%{count}</strong> продуктов в нашей базе данных."
     new_product_description: "На этой странице вы можете создать новый продукт.Просто введите имя и выберите тип продукта. Если вы хотите, то можете добавить дополнительные опции для съестных продуктов."
     new_product: "Создать продукт"
 
     #purchase
-    add_purchase: 'Добавить покупку'
+    add_purchase: "Добавить покупку"
     purchases_count: "Сделано покупок: %{size}"
     purchases_count_per_month: "Сделано покупок за месяц: %{size}"
     remove_purchase: "X"
 
     #cost
-    new_cost: 'Новый расход'
-    archive: 'Архив'
+    new_cost: "Новый расход"
+    archive: "Архив"
     all_costs: "Расходы"
+    error_cost: "Пожалуйста введите дату"
 
     #balance
     error_balance: "На это действие недостаточно денег."
@@ -59,44 +60,44 @@ ru:
     name: "Название"
     kind: "Тип"
     manufacturer: "Производитель"
-    calories: 'Каллории'
-    fats: 'Жиры'
-    proteins: 'Белки'
-    carbohydrates: 'Углеводы'
-    vitamin_a: 'Витамин A'
-    vitamin_b1: 'Витамин B1'
-    vitamin_b2: 'Витамин B2'
-    vitamin_b3: 'Витамин B3'
-    vitamin_b4: 'Витамин B4'
-    vitamin_b5: 'Витамин B5'
-    vitamin_b6: 'Витамин B6'
-    vitamin_b7: 'Витамин B7'
-    vitamin_b9: 'Витамин B9'
-    vitamin_b10: 'Витамин B10'
-    vitamin_b11: 'Витамин B11'
-    vitamin_b12: 'Витамин B12'
-    vitamin_b13: 'Витамин B13'
-    vitamin_b15: 'Витамин B15'
-    vitamin_c: 'Витамин C'
-    vitamin_d: 'Витамин D'
-    vitamin_e: 'Витамин E'
-    vitamin_k: 'Витамин K'
-    vitamin_n: 'Витамин N'
-    vitamin_p: 'Витамин P'
-    vitamin_u: 'Витамин U'
-    calcium: 'Кальций'
-    iron: 'Железо'
-    potassium: 'Калий'
-    copper: 'Медь'
-    manganese: 'Марганец'
-    magnesium: 'магний'
-    sodium: 'Натрий'
-    sulfur: 'Сера'
-    silicon: 'Кремний'
-    zinc: 'Цинк'
-    selenium: 'Селен'
-    chrome: 'Хром'
-    iodine: 'Йод'
+    calories: "Каллории"
+    fats: "Жиры"
+    proteins: "Белки"
+    carbohydrates: "Углеводы"
+    vitamin_a: "Витамин A"
+    vitamin_b1: "Витамин B1"
+    vitamin_b2: "Витамин B2"
+    vitamin_b3: "Витамин B3"
+    vitamin_b4: "Витамин B4"
+    vitamin_b5: "Витамин B5"
+    vitamin_b6: "Витамин B6"
+    vitamin_b7: "Витамин B7"
+    vitamin_b9: "Витамин B9"
+    vitamin_b10: "Витамин B10"
+    vitamin_b11: "Витамин B11"
+    vitamin_b12: "Витамин B12"
+    vitamin_b13: "Витамин B13"
+    vitamin_b15: "Витамин B15"
+    vitamin_c: "Витамин C"
+    vitamin_d: "Витамин D"
+    vitamin_e: "Витамин E"
+    vitamin_k: "Витамин K"
+    vitamin_n: "Витамин N"
+    vitamin_p: "Витамин P"
+    vitamin_u: "Витамин U"
+    calcium: "Кальций"
+    iron: "Железо"
+    potassium: "Калий"
+    copper: "Медь"
+    manganese: "Марганец"
+    magnesium: "Магний"
+    sodium: "Натрий"
+    sulfur: "Сера"
+    silicon: "Кремний"
+    zinc: "Цинк"
+    selenium: "Селен"
+    chrome: "Хром"
+    iodine: "Йод"
   number:
     currency:
       format:

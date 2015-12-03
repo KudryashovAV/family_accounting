@@ -1,9 +1,9 @@
 en:
   application:
     #general
-    home_page: 'Home'
-    hello: 'To use the service please login first: %{links}'
-    confirm: 'Are you shure?'
+    home_page: "Home"
+    hello: "To use the service please login first: %{links}"
+    confirm: "Are you shure?"
     flash_created: "The operation was successful"
     element_destroyed: "Element has been destroyed"
     free_money: "You're free money: %{money}"
@@ -18,22 +18,23 @@ en:
     date: "Date"
 
     #product
-    product: 'Product'
-    products: 'Products'
+    product: "Product"
+    products: "Products"
     product_count: "We have <strong>%{count}</strong> products in our database on this moment."
     new_product_description: "On this page you can create new products. Just enter the name and kind of product. If you want add additional options for edible products."
     new_product: "New product"
 
     #purchase
-    add_purchase: 'Add purchase'
+    add_purchase: "Add purchase"
     purchases_count: "Purchases made: %{size}"
     purchases_count_per_month: "Purchases made per month: %{size}"
     remove_purchase: "X"
 
     #cost
-    new_cost: 'New cost'
-    archive: 'Archive'
+    new_cost: "New cost"
+    archive: "Archive"
     all_costs: "Costs"
+    error_cost: "Please enter the date"
 
     #balance
     error_balance: "For this action is not enough money."
@@ -59,44 +60,44 @@ en:
     name: "Name"
     kind: "Kind"
     manufacturer: "Manufacturer"
-    calories: 'Calories'
-    fats: 'Fats'
-    proteins: 'Proteins'
-    carbohydrates: 'Carbohydrates'
-    vitamin_a: 'Vitamin A'
-    vitamin_b1: 'Vitamin B1'
-    vitamin_b2: 'Vitamin B2'
-    vitamin_b3: 'Vitamin B3'
-    vitamin_b4: 'Vitamin B4'
-    vitamin_b5: 'Vitamin B5'
-    vitamin_b6: 'Vitamin B6'
-    vitamin_b7: 'Vitamin B7'
-    vitamin_b9: 'Vitamin B9'
-    vitamin_b10: 'Vitamin B10'
-    vitamin_b11: 'Vitamin B11'
-    vitamin_b12: 'Vitamin B12'
-    vitamin_b13: 'Vitamin B13'
-    vitamin_b15: 'Vitamin B15'
-    vitamin_c: 'Vitamin C'
-    vitamin_d: 'Vitamin D'
-    vitamin_e: 'Vitamin E'
-    vitamin_k: 'Vitamin K'
-    vitamin_n: 'Vitamin N'
-    vitamin_p: 'Vitamin P'
-    vitamin_u: 'Vitamin U'
-    calcium: 'Calcium'
-    iron: 'Iron'
-    potassium: 'Potassium'
-    copper: 'Copper'
-    manganese: 'Manganese'
-    magnesium: 'Magnesium'
-    sodium: 'Sodium'
-    sulfur: 'Sulfur'
-    silicon: 'Silicon'
-    zinc: 'Zinc'
-    selenium: 'Selenium'
-    chrome: 'Chrome'
-    iodine: 'Iodine'
+    calories: "Calories"
+    fats: "Fats"
+    proteins: "Proteins"
+    carbohydrates: "Carbohydrates"
+    vitamin_a: "Vitamin A"
+    vitamin_b1: "Vitamin B1"
+    vitamin_b2: "Vitamin B2"
+    vitamin_b3: "Vitamin B3"
+    vitamin_b4: "Vitamin B4"
+    vitamin_b5: "Vitamin B5"
+    vitamin_b6: "Vitamin B6"
+    vitamin_b7: "Vitamin B7"
+    vitamin_b9: "Vitamin B9"
+    vitamin_b10: "Vitamin B10"
+    vitamin_b11: "Vitamin B11"
+    vitamin_b12: "Vitamin B12"
+    vitamin_b13: "Vitamin B13"
+    vitamin_b15: "Vitamin B15"
+    vitamin_c: "Vitamin C"
+    vitamin_d: "Vitamin D"
+    vitamin_e: "Vitamin E"
+    vitamin_k: "Vitamin K"
+    vitamin_n: "Vitamin N"
+    vitamin_p: "Vitamin P"
+    vitamin_u: "Vitamin U"
+    calcium: "Calcium"
+    iron: "Iron"
+    potassium: "Potassium"
+    copper: "Copper"
+    manganese: "Manganese"
+    magnesium: "Magnesium"
+    sodium: "Sodium"
+    sulfur: "Sulfur"
+    silicon: "Silicon"
+    zinc: "Zinc"
+    selenium: "Selenium"
+    chrome: "Chrome"
+    iodine: "Iodine"
 
   number:
     currency:

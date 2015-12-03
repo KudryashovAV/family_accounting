@@ -14,10 +14,15 @@ class CostsController < ApplicationController
   end
 
   def create
-    date_array = resource_params[:date].split('/')
-    date = Date.new(date_array[2].to_i, date_array[1].to_i, date_array[0].to_i)
-    cost = current_user.costs.where('created_at > ? AND created_at < ?', date, date.tomorrow).first || current_user.costs.create(created_at: date)
-    redirect_to cost_path(id: cost.id)
+    unless resource_params[:date].empty?
+      date_array = resource_params[:date].split('/')
+      date = Date.new(date_array[2].to_i, date_array[1].to_i, date_array[0].to_i)
+      cost = current_user.costs.where('created_at > ? AND created_at < ?', date, date.tomorrow).first || current_user.costs.create(created_at: date)
+      redirect_to cost_path(id: cost.id)
+    else
+      flash[:alert] = t('application.error_cost')
+      redirect_to costs_path
+    end
   end
 
   private
