@@ -1,11 +1,11 @@
 .row
   .col-md-12
+    .col-sm-6.col-md-4.col-lg-2.cost-card
+      = render 'form', product: current_user.costs.build
     - if @current_period_costs
       - @current_period_costs.each do |current_period_cost|
         = link_to cost_path(id: current_period_cost.id) do
           = render 'cost_card', resource: current_period_cost
-    .col-sm-6.col-md-4.col-lg-2.cost-card
-      = render 'form', product: current_user.costs.build
   .row
     .col-md-12
       #accordion.panel-group{"aria-multiselectable" => "false", :role => "tablist"}
