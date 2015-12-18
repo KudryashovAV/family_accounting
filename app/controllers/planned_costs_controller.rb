@@ -7,10 +7,12 @@ class PlannedCostsController < ApplicationController
     if @planned_cost.update(resource_params)
       if @planned_cost.paid?
         current_cost = current_user.costs.where('created_at > ?', Date.today).first || current_user.costs.create
-        current_user.purchases.create(cost_id: current_cost.id,
+        purchase = current_user.purchases.create(cost_id: current_cost.id,
                                       product_id: Product.find_or_create_by(name: @planned_cost.kind, kind: @planned_cost.kind).id,
                                       weight: 1,
                                       unit_price: @planned_cost.real_price || @planned_cost.planned_price)
+        current_user.balances.create(amount: (current_user.balances.last.amount - purchase.price))
+        @planned_cost.destroy
       end
       flash[:notice] = t('application.flash_created')
       redirect_to :root

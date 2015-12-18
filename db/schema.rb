@@ -113,32 +113,6 @@ ActiveRecord::Schema.define(version: 20151127104943) do
     t.datetime "updated_at",                                           null: false
   end
 
-  create_table "properties", force: :cascade do |t|
-    t.string   "property_type",           limit: 100
-    t.integer  "bedrooms",                limit: 2
-    t.integer  "bathrooms",               limit: 2
-    t.decimal  "price",                               precision: 15, scale: 2
-    t.decimal  "size_square_meters",                  precision: 15, scale: 3
-    t.integer  "parking_spaces",          limit: 2
-    t.text     "description"
-    t.string   "realtor_name",            limit: 255
-    t.string   "realtor_phone",           limit: 25
-    t.string   "realtor_email",           limit: 100
-    t.integer  "scrape_id",               limit: 8,                                            null: false
-    t.boolean  "found",                                                        default: true
-    t.datetime "last_updated",                        precision: 6,                            null: false
-    t.string   "site_uid",                limit: 255,                                          null: false
-    t.string   "state",                   limit: 150
-    t.string   "city",                    limit: 150
-    t.string   "neighborhood",            limit: 150
-    t.boolean  "should_rescrape_details",                                      default: false, null: false
-  end
-
-  add_index "properties", ["found"], name: "properties_found_idx", using: :hash
-  add_index "properties", ["last_updated"], name: "properties_last_updated_idx", using: :btree
-  add_index "properties", ["scrape_id", "site_uid"], name: "properties_scrape_id_site_uid_idx", unique: true, using: :btree
-  add_index "properties", ["scrape_id"], name: "properties_scrape_id_idx", using: :btree
-
   create_table "purchases", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "cost_id"
@@ -149,14 +123,6 @@ ActiveRecord::Schema.define(version: 20151127104943) do
     t.datetime "updated_at",                          null: false
     t.integer  "user_id"
   end
-
-  create_table "scrapes", force: :cascade do |t|
-    t.string   "scrape",         limit: 50,               null: false
-    t.datetime "last_started",              precision: 6
-    t.datetime "last_completed",            precision: 6
-  end
-
-  add_index "scrapes", ["scrape"], name: "uniq_idx", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.boolean  "active",                 default: true, null: false
@@ -186,5 +152,4 @@ ActiveRecord::Schema.define(version: 20151127104943) do
   add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "properties", "scrapes", name: "properties_scrape_id_fkey", on_update: :cascade, on_delete: :cascade
 end

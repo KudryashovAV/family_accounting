@@ -1,0 +1,15 @@
+.row
+  .col-md-3
+    .row
+      .col-md-12= 'Balance'
+    - @balances.each do |balance|
+      .row
+        .col-md-12= "#{balance.amount} - #{balance.created_at.strftime('%b %d, %Y')}"
+  .col-md-3
+    .row
+      .col-md-12= 'Costs'
+    - @costs.each do |cost|
+      .row
+        .col-md-12= "#{cost.purchases.pluck(:price).sum} - #{cost.created_at.strftime('%b %d, %Y')}"
+    .row
+      .col-md-12= "Total: #{@costs.map{|cost| cost.purchases.pluck(:price).sum}.sum}"
